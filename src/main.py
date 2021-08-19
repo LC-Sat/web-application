@@ -29,6 +29,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 		- log errors
 # 		- terminate script
 
+def log(text):
+
+	log_path = os.path.join(BASE_DIR, "logs")
+		log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
+
+		with open(os.path.join(log_path, log_name), "a") as log:
+
+			log.write('\n' + str(text) + '\n')
+
+		log.close()
+
 
 def install_packages():
 
@@ -38,12 +49,7 @@ def install_packages():
 
 	except Exception as e:
 
-		log_path = os.path.join(BASE_DIR, "logs")
-		log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
-
-		with open(os.path.join(log_path, log_name), "a") as log:
-
-			log.write('\n' + str(e) + '\n')
+		log(e)
 
 		sys.exit()
 
@@ -64,12 +70,24 @@ finally:
 		import matplotlib.pyplot as plt
 
 	except Exception as e:
-		
+
 		log_path = os.path.join(BASE_DIR, "logs")
 		log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
 
-		with open(os.path.join(log_path, log_name), "a") as log:
-
-			log.write('\n' + str(e) + '\n')
+		log(e)
 
 		sys.exit()
+
+
+# =============================================================================
+# Local imports
+# =============================================================================
+
+
+try:
+	pass
+
+except Exception as e:
+
+	log(e)
+	sys.exit()

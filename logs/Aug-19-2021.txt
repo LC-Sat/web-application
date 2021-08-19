@@ -1,2 +1,0 @@
-
-Command '['D:\\THOMAS\\app\\python\\python.exe', '-m', 'pip', 'install', '-r', 'D:\\THOMAS\\projets\\CAN-SAT\\web-application\\requirements.txt']' returned non-zero exit status 1.
