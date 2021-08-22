@@ -1,0 +1,9 @@
+# Config file
+
+
+settings:
+  - theme: dark
+  - lang: en-us
+  - cansatIp: https://customIP
+  - debug: true
+  

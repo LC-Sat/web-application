@@ -32,13 +32,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def log(text):
 
 	log_path = os.path.join(BASE_DIR, "logs")
-		log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
+	log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
 
-		with open(os.path.join(log_path, log_name), "a") as log:
+	with open(os.path.join(log_path, log_name), "a") as log:
 
-			log.write('\n' + str(text) + '\n')
+		log.write('\n' + str(text) + '\n')
 
-		log.close()
+	log.close()
 
 
 def install_packages():
@@ -57,6 +57,7 @@ def install_packages():
 #  If importing external librairies fails then call install_packages 
 
 try:
+	import yaml
 	from flask import Flask
 	import matplotlib.pyplot as plt
 
@@ -92,3 +93,80 @@ except Exception as e:
 	log(e)
 	sys.exit()
 
+
+# =============================================================================
+# Consts
+# =============================================================================
+
+
+TEMPLATES_FOLDER = os.path.join(BASE_DIR, 'res/templates')
+SETTINGS_FOLDER = os.path.join(BASE_DIR, 'res/settings')	
+APP = Flask(__name__)
+
+
+# =============================================================================
+# Settings and Config
+# =============================================================================
+
+
+class Settings:
+
+
+	def __init__(self, file_path):
+
+		with open(file_path, 'r') as file:
+
+			self.settings_data = yaml.load(file)
+
+			file.close()
+		print(self.settings_data)
+
+
+	def __str__(self):
+
+		return "Settings class"
+
+	
+	def return_settings_value(value):
+		
+		return str(self.settings_data["settings"][value])
+
+
+# =============================================================================
+# Routes
+# =============================================================================
+
+
+# Login view:
+# 	- user must be logged to access other views
+@APP.route('/')
+def login_view():
+	pass
+
+
+# Commands views:
+# 	- communicates with the CanSat to send oders and download real-time data. 
+@APP.route('/commands')
+def commands_view():
+	pass
+
+# Process_data_view:
+# 	- web application to process the downloaded data
+@APP.route('/process_data')
+def process_data_view():
+	pass
+
+
+# =============================================================================
+# Run program
+# =============================================================================
+
+
+def main():
+
+	print("start")
+	APP.run()
+
+# if __name__ == '__main__':
+
+# 	main()
