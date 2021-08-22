@@ -21,6 +21,7 @@ import sys
 import subprocess
 from datetime import date
 import numpy
+import json
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -100,14 +101,17 @@ except Exception as e:
 
 
 TEMPLATES_FOLDER = os.path.join(BASE_DIR, 'res/templates')
-SETTINGS_FOLDER = os.path.join(BASE_DIR, 'res/settings')	
+SETTINGS_FOLDER = os.path.join(BASE_DIR, 'res/settings')
+LANGUAGE_FOLDER = os.path.join(BASE_DIR, 'res/i18n')
 APP = Flask(__name__)
 
 
 # =============================================================================
-# Settings and Config
+# Controllers class
 # =============================================================================
 
+
+# Settings class
 
 class Settings:
 
@@ -119,7 +123,6 @@ class Settings:
 			self.settings_data = yaml.load(file)
 
 			file.close()
-		print(self.settings_data)
 
 
 	def __str__(self):
@@ -127,10 +130,33 @@ class Settings:
 		return "Settings class"
 
 	
-	def return_settings_value(value):
+	def return_settings_value(self, value):
 		
 		return str(self.settings_data["settings"][value])
 
+
+# Language class
+
+class Language:
+
+
+	def __init__(self, file_path):
+
+		with open(file_path, 'r') as file:
+
+			self.language_data = json.load(file)
+
+			file.close()
+
+
+	def __str__(self):
+
+		return "Language class"
+
+
+	def return_text(self, text):
+
+		return self.language_data[text]
 
 # =============================================================================
 # Routes
