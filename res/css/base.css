@@ -25,14 +25,30 @@
 
 body {
 	background-color: var(--backgroundColor);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.running {
+	background-color: var(--runningColor);
+}
+
+.valid {
+	background-color: var(--validColor);
+}
+
+.error {
+	background-color: var(--errorColor);
 }
 
 /* Mobiles version */
 
 header {
 	position: fixed;
-	top: 0;
+	top: 2em;
 	left: 0;
+	z-index: 20;
 	height: 6em;
 	width: 12em;
 	display: flex;
@@ -48,8 +64,19 @@ header h1 {
 	color: var(--textColor);
 }
 
+article.mainContainer {
+	width: 95%;
+	padding-top: 12em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
 /* Computer version */
 
-@media all and min-width() {
-	
+@media all and (min-width: 400px) {
+	header {
+		top: 0;
+	}
 }
