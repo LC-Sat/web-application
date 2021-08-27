@@ -7,6 +7,7 @@ import requests
 import json
 import time
 from datetime import date
+from datetime import datetime
 import os
 import zipfile
 import shutil
@@ -21,11 +22,14 @@ import io
 class Api:
 
 
-	def __init__(self, url_base, urls_path, log_path, data_path):
+	def __init__(self, debug, url_base, urls_path, log_path, data_path):
 
+		self.debug = debug
 		self.url_base = url_base
 		self.log_path = log_path
 		self.data_path = data_path
+
+		# Load urls from config.json file
 
 		with open(urls_path + "/urls.json", 'r') as file:
 
@@ -40,12 +44,16 @@ class Api:
 
 	def send_request(self, url):
 
+		# Send request and return content
+
 		r = requests.get(self.url_base + url)
 
 		return r
 
 
 	def get_cansat_status(self):
+
+		# Request for Cansat Status
 
 		r = self.send_request(self.urls["status"])
 
@@ -59,7 +67,11 @@ class Api:
 
 	def activate(self, url, element):
 
+		# Send request then check if element has been unactivated
+
 		r = self.send_request(url)
+
+		# Return "" if something went wrong
 
 		if r == "":
 
@@ -75,6 +87,9 @@ class Api:
 				return ""
 
 			else:
+
+				# Return True if element is unactivated
+				# Return False if element is not unactivated
 
 				if status[element] == "True" :
 
@@ -87,7 +102,11 @@ class Api:
 
 	def unactivate(self, url, element):
 
+		# Send request then check if element has been unactivated
+
 		r = self.send_request(url)
+
+		# Return "" if something went wrong
 
 		if r == "":
 
@@ -104,6 +123,9 @@ class Api:
 
 			else:
 
+				# Return True if element is unactivated
+				# Return False if element is not unactivated
+
 				if status[element] == False:
 
 					return True
@@ -115,7 +137,17 @@ class Api:
 
 	def start_recording(self):
 
+		# Send request to stop recording data
+		# Wait 1s and check if the recording has stopped
+
 		r = self.activate(self.urls["start_recording"], "capturing")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Activating record | recording status: [{r}]")
+			print("----------------[END API]---------------")
+
 
 		if r:
 
@@ -132,7 +164,17 @@ class Api:
 
 	def stop_recording(self):
 
+		# Send request to start recording data
+		# Wait 1s and check if the recording has started
+
 		r = self.unactivate(self.urls["stop_recording"], "capturing")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Stopping record | recording status: [{r}]")
+			print("----------------[END API]---------------")
+
 
 		if r:
 
@@ -149,7 +191,16 @@ class Api:
 
 	def enable_encryption(self):
 
+		# Send request to enable encryption option
+		# Wait 1s and check if the encryption option is enabled
+
 		r = self.activate(self.urls["start_encryption"], "encryption")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Enable encryption | encryption status: [{r}]")
+			print("----------------[END API]---------------")
 
 		if r:
 
@@ -166,7 +217,16 @@ class Api:
 
 	def disable_encryption(self):
 
+		# Send request to disable encryption option
+		# Wait 1s and check if the encryption option is disabled
+
 		r = self.unactivate(self.urls["stop_encryption"], "encryption")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Disable encryption | encryption status: [{r}]")
+			print("----------------[END API]---------------")
 
 		if r:
 
@@ -183,7 +243,16 @@ class Api:
 
 	def start_buzzer(self):
 
+		# Send request to start Buzzer
+		# Wait 1s and check if buzzer has started
+
 		r = self.activate(self.urls["start_buzzer"], "buzzer")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------")
 
 		if r:
 
@@ -200,7 +269,16 @@ class Api:
 
 	def stop_buzzer(self):
 
+		# Send request to stop Buzzer
+		# Wait 1s and check if buzzer has stopped
+
 		r = self.unactivate(self.urls["stop_buzzer"], "buzzer")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------")
 
 		if r:
 
@@ -217,7 +295,16 @@ class Api:
 
 	def shutdown_cansat(self):
 
+		# Send request to stop CanSat
+		# Wait 2s and check if shutdown process has started
+
 		r = self.send_request(self.urls["shutdown"])
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------")
 
 		if r == "":
 
@@ -236,8 +323,19 @@ class Api:
 
 	def get_logs(self):
 
+		# Request for logs and stored them if a log file called %data.txt
+		# 	- if no file then create it
+		# 	- else append content to current file
+
 		r = self.send_request(self.urls["logs"])
 		log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
+
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Getting logs | log status: [{r}]")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Log name | {log_name}")
+			print("----------------[END API]---------------")
 
 		with open(os.path.join(self.log_path, log_name), 'ab') as l:
 
@@ -246,6 +344,10 @@ class Api:
 
 
 	def get_sub_folders(self, path):
+
+		# Search for subfolers:
+		# 	- if there is a subfolder then add its name to path
+		# 	- if none then stop
 
 		try:
 			if os.listdir(path)[0].endswith(""):
@@ -259,6 +361,7 @@ class Api:
 
 			return ""
 
+
 	def get_recorded_data(self):
 		
 		# Get the file content
@@ -271,8 +374,14 @@ class Api:
 
 			return False
 
+		if self.debug:
+
+			print("-----------------[API]------------------")
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Get data | buzzer status: [{r}]")
+
 		# Create a data.tar.gz file at data/
 		# Unpack the compressed file creating a data/data folder
+		
 
 		with open(self.data_path + "data.tar.gz", "wb") as f:
 
@@ -299,7 +408,10 @@ class Api:
 		# Get the file extensions:
 		# 	- if .aes then move files to data/encrypted/id
 		# 	- else move files to data/normal/id
-		print(directory)
+
+		if self.debug:
+
+			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Getting unzipped data | path: [{directory}]")
 
 		if os.listdir(os.path.dirname(directory))[0].endswith(".aes"):
 			
@@ -314,10 +426,12 @@ class Api:
 			os.mkdir(self.data_path + "/encrypted/" + dirname)
 			shutil.move(self.data_path + "data.tar.gz", self.data_path + "/encrypted/" + dirname)
 
+			if self.debug:
+
+				print(f"[{datetime.now.strftime("%H:%M:%S")}] - Moving files | path: [{self.data_path + "data.tar.gz", self.data_path + "/encrypted/" + dirname}]")
+				print("----------------[END API]---------------")
+
 			for file in os.listdir(os.path.join(self.data_path, "data")):
-				print(file)
-				print(self.data_path + "/encrypted/" + dirname)
-				print(dirname)
 				shutil.move(os.path.join(os.path.join(self.data_path, "data"), file), self.data_path + "/encrypted/" + dirname)
 
 		else:
@@ -332,6 +446,12 @@ class Api:
 
 			os.mkdir(self.data_path + "/normal/" + dirname)
 			shutil.move(self.data_path + "data.tar.gz", self.data_path + "/normal/" + dirname)
+
+			if self.debug:
+
+				print(f"[{datetime.now.strftime("%H:%M:%S")}] - Moving files | path: [{self.data_path + "data.tar.gz", self.data_path + "/normal/" + dirname}]")
+				print("----------------[END API]---------------")
+
 
 			for file in os.listdir(os.path.join(self.data_path, "data")):
 

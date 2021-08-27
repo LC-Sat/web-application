@@ -131,7 +131,9 @@ APP = Flask(__name__)
 class Settings:
 
 
-	def __init__(self, file_path):
+	def __init__(self, debug, file_path):
+
+		self.debug = debug
 
 		with open(file_path, 'r') as file:
 
@@ -146,6 +148,12 @@ class Settings:
 
 	
 	def get_settings_value(self, value):
+
+		if self.debug:
+
+			print("-----------------[SETTINGS]-----------------")
+			print(str(self.settings_data[value]))
+			print("---------------[END SETTINGS]---------------")
 		
 		return str(self.settings_data[value])
 
@@ -155,7 +163,9 @@ class Settings:
 class Language:
 
 
-	def __init__(self, file_path):
+	def __init__(self, debug, file_path):
+
+		self.debug = debug
 
 		with open(file_path, 'r') as file:
 
@@ -171,6 +181,12 @@ class Language:
 
 	def get_text(self, text):
 
+		if self.debug:
+
+			print("-----------------[LANGUAGE]-----------------")
+			print(self.language_data[text])
+			print("---------------[END LANGUAGE]---------------")
+
 		return self.language_data[text]
 
 
@@ -180,8 +196,11 @@ class Language:
 
 
 _settings = Settings(SETTINGS_PATH)
-_language = Language(LANGUAGE_FOLDER + _settings.get_settings_value("language") + ".json")
-
+_language = Language(
+	LANGUAGE_FOLDER + _settings.get_settings_value("language") + ".json"
+	)
+_api = Api(
+	)
 if _settings.get_settings_value("debug"):
 
 	print(f"{_settings}\t OK")
@@ -228,17 +247,6 @@ def main():
 		os.path.join(BASE_DIR, "res/settings"),
 		os.path.join(BASE_DIR, "logs/cansat"),
 		os.path.join(BASE_DIR, "data/"))
-
-	# print(json.dumps(_api.get_cansat_status(), sort_keys=True, indent=4))
-	# print(_api.start_recording())
-	# print(_api.stop_recording())
-	# print(_api.enable_encryption())
-	# print(_api.disable_encryption())
-	# print(_api.start_buzzer())
-	# print(_api.stop_buzzer())
-	# _api.get_logs()
-	_api.get_recorded_data()
-	# print(_api.shutdown_cansat())
 
 if __name__ == '__main__':
 
