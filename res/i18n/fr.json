@@ -1,1 +1,9 @@
-{}
+{
+	"title": "LC SAT",
+	"login_title": "LC-sat web application: connexion",
+	"identification": "Identification",
+	"username": "Nom d'utilisateur",
+	"password": "Mot de passe",
+	"login": "Connexion",
+	"login_error": "Identifiants invalides. Veuillez réessayer."
+}

@@ -29,7 +29,7 @@ class Api:
 		self.log_path = log_path
 		self.data_path = data_path
 
-		# Load urls from config.json file
+		# Load urls from urls.json file
 
 		with open(urls_path + "/urls.json", 'r') as file:
 
@@ -145,8 +145,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Activating record | recording status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Activating record | recording status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 
 		if r:
@@ -172,8 +172,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Stopping record | recording status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Stopping record | recording status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 
 		if r:
@@ -199,8 +199,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Enable encryption | encryption status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Enable encryption | encryption status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 		if r:
 
@@ -225,8 +225,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Disable encryption | encryption status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Disable encryption | encryption status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 		if r:
 
@@ -251,8 +251,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 		if r:
 
@@ -277,8 +277,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 		if r:
 
@@ -303,8 +303,8 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Start buzzer | buzzer status: [{r}]")
-			print("----------------[END API]---------------")
+			print(f"Start buzzer | buzzer status: [{r}]")
+			print("----------------[END API]---------------\n")
 
 		if r == "":
 
@@ -333,9 +333,9 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Getting logs | log status: [{r}]")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Log name | {log_name}")
-			print("----------------[END API]---------------")
+			print(f"Getting logs | log status: [{r}]")
+			print(f"Log name | {log_name}")
+			print("----------------[END API]---------------\n")
 
 		with open(os.path.join(self.log_path, log_name), 'ab') as l:
 
@@ -377,7 +377,7 @@ class Api:
 		if self.debug:
 
 			print("-----------------[API]------------------")
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Get data | buzzer status: [{r}]")
+			print(f"Get data | buzzer status: [{r}]")
 
 		# Create a data.tar.gz file at data/
 		# Unpack the compressed file creating a data/data folder
@@ -411,7 +411,7 @@ class Api:
 
 		if self.debug:
 
-			print(f"[{datetime.now.strftime("%H:%M:%S")}] - Getting unzipped data | path: [{directory}]")
+			print(f"Getting unzipped data | path: [{directory}]")
 
 		if os.listdir(os.path.dirname(directory))[0].endswith(".aes"):
 			
@@ -428,8 +428,8 @@ class Api:
 
 			if self.debug:
 
-				print(f"[{datetime.now.strftime("%H:%M:%S")}] - Moving files | path: [{self.data_path + "data.tar.gz", self.data_path + "/encrypted/" + dirname}]")
-				print("----------------[END API]---------------")
+				print(f"Moving files | path: [{str(self.data_path + 'data.tar.gz', self.data_path + '/encrypted/' + dirname)}]")
+				print("----------------[END API]---------------\n")
 
 			for file in os.listdir(os.path.join(self.data_path, "data")):
 				shutil.move(os.path.join(os.path.join(self.data_path, "data"), file), self.data_path + "/encrypted/" + dirname)
@@ -449,8 +449,8 @@ class Api:
 
 			if self.debug:
 
-				print(f"[{datetime.now.strftime("%H:%M:%S")}] - Moving files | path: [{self.data_path + "data.tar.gz", self.data_path + "/normal/" + dirname}]")
-				print("----------------[END API]---------------")
+				print(f"Moving files | path: [{str(self.data_path + 'data.tar.gz', self.data_path + '/normal/' + dirname)}]")
+				print("----------------[END API]---------------\n")
 
 
 			for file in os.listdir(os.path.join(self.data_path, "data")):

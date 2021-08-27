@@ -20,6 +20,7 @@ import os
 import sys
 import subprocess
 from datetime import date
+from datetime import datetime
 import numpy
 import json
 import zipfile
@@ -64,7 +65,7 @@ def install_packages():
 
 try:
 	import yaml
-	from flask import Flask
+	from flask import Flask, render_template, redirect, url_for, request
 	import matplotlib.pyplot as plt
 	import cv2 as cv
 	import folium
@@ -77,7 +78,7 @@ finally:
 
 	try:
 		import yaml
-		from flask import Flask
+		from flask import Flask, render_template, redirect, url_for, request
 		import matplotlib.pyplot as plt
 		import cv2 as cv
 		import folium
@@ -115,9 +116,13 @@ except Exception as e:
 # =============================================================================
 
 
-SETTINGS_PATH = os.path.join(BASE_DIR, 'res/settings/settings.yaml')
+SETTINGS_PATH = os.path.join(BASE_DIR, 'res/settings/')
 TEMPLATES_FOLDER = os.path.join(BASE_DIR, 'res/templates/')
 LANGUAGE_FOLDER = os.path.join(BASE_DIR, 'res/i18n/')
+LOG_PATH = os.path.join(BASE_DIR, 'logs/')
+DATA_PATH = os.path.join(BASE_DIR, 'data/')
+STATIC_PATH = os.path.join(BASE_DIR, 'src/static/')
+THEME_PATH = os.path.join(BASE_DIR, 'res/theme/')
 APP = Flask(__name__)
 
 
@@ -131,9 +136,9 @@ APP = Flask(__name__)
 class Settings:
 
 
-	def __init__(self, debug, file_path):
+	def __init__(self, file_path):
 
-		self.debug = debug
+		self.debug = False
 
 		with open(file_path, 'r') as file:
 
@@ -152,8 +157,8 @@ class Settings:
 		if self.debug:
 
 			print("-----------------[SETTINGS]-----------------")
-			print(str(self.settings_data[value]))
-			print("---------------[END SETTINGS]---------------")
+			print(f"Settings | {str(self.settings_data[value])}")
+			print("---------------[END SETTINGS]---------------\n")
 		
 		return str(self.settings_data[value])
 
@@ -184,8 +189,8 @@ class Language:
 		if self.debug:
 
 			print("-----------------[LANGUAGE]-----------------")
-			print(self.language_data[text])
-			print("---------------[END LANGUAGE]---------------")
+			print(f"Language | {str(self.language_data[text])}")
+			print("---------------[END LANGUAGE]---------------\n")
 
 		return self.language_data[text]
 
@@ -195,16 +200,78 @@ class Language:
 # =============================================================================
 
 
-_settings = Settings(SETTINGS_PATH)
+_settings = Settings(
+	os.path.join(SETTINGS_PATH, 'settings.yaml')
+	)
+
+DEBUG = _settings.debug = _settings.get_settings_value("debug")
+_settings.debug = DEBUG
+
 _language = Language(
+	DEBUG,
 	LANGUAGE_FOLDER + _settings.get_settings_value("language") + ".json"
 	)
+
 _api = Api(
+	DEBUG,
+	_settings.get_settings_value("cansatIp"),
+	SETTINGS_PATH,
+	os.path.join(LOG_PATH, "cansat/"),
+	DATA_PATH
 	)
+
 if _settings.get_settings_value("debug"):
 
-	print(f"{_settings}\t OK")
-	print(f"{_language}\t OK")
+	print("------------------[DEBUG]------------------")
+	print(f"DEBUG | {_settings}\t OK")
+	print(f"DEBUG | {_language}\t OK")
+	print(f"DEBUG | {_api}\t      OK")
+	print("----------------[END DEBUG]----------------\n")
+
+
+# =============================================================================
+# Theme
+# =============================================================================
+
+# Open the theme file from /res/theme/file.css
+# Write file in content /src/static/css/theme.css 
+def create_theme(theme_path, file_path):
+
+	with open(theme_path, "r") as file:
+
+		data = file.read()
+		file.close()
+
+	with open(file_path, 'w') as file:
+
+		file.write(data)
+		file.close()
+
+	if _settings.get_settings_value("debug"):
+
+		print("------------------[THEME]------------------")
+		print(f"Chosen theme : {theme_path}")
+		print(f"thme path : {file_path}")
+		print("----------------[END THEME]----------------\n")
+
+create_theme(
+	os.path.join(THEME_PATH, _settings.get_settings_value("theme") + ".css"), 
+	os.path.join(STATIC_PATH, "css/theme.css")
+	)
+
+
+# =============================================================================
+# Texts
+# =============================================================================
+
+# Load all text from the selected language for the login page
+def load_login_texts():
+
+	texts = {}
+	texts["page_title"] = _language.get_text("login_title")
+	texts["title"] = _language.get_text("title")
+
+	return
 
 
 # =============================================================================
@@ -214,9 +281,26 @@ if _settings.get_settings_value("debug"):
 
 # Login view:
 # 	- user must be logged to access other views
-@APP.route('/')
+@APP.route('/', methods=['GET', 'POST'])
 def login_view():
-	pass
+
+	theme = _settings.get_settings_value("theme")
+
+	texts = load_login_texts()
+
+	error = None
+
+	if request.method == 'POST':
+
+		if request.form['username'] != 'lcsat' or request.form['password'] != 'lcsat2021':
+
+			error = texts["login_error"]
+		
+		else:
+
+			return redirect(url_for('commands'))
+
+	return render_template('login.html', theme=theme, error=error)
 
 
 # Commands views:
@@ -233,20 +317,23 @@ def process_data_view():
 
 
 # =============================================================================
+# Reload
+# =============================================================================
+
+# Set new values for all variables
+def reload():
+
+	pass
+
+
+# =============================================================================
 # Run program
 # =============================================================================
 
 
 def main():
 
-	print("start")
-	# APP.run()
-	
-	_api = Api(
-		"http://127.0.0.1:80",
-		os.path.join(BASE_DIR, "res/settings"),
-		os.path.join(BASE_DIR, "logs/cansat"),
-		os.path.join(BASE_DIR, "data/"))
+	APP.run()
 
 if __name__ == '__main__':
 
