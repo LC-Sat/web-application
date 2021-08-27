@@ -1,9 +1,6 @@
 # Config file
 
-
-settings:
-  - theme: dark
-  - lang: en-us
-  - cansatIp: https://customIP
-  - debug: true
-  
+theme: dark
+language: en-us
+cansatIp: https://customIP
+debug: true

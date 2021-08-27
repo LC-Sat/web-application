@@ -22,6 +22,11 @@ import subprocess
 from datetime import date
 import numpy
 import json
+import zipfile
+import shutil
+import time
+import io
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,14 +37,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def log(text):
 
-	log_path = os.path.join(BASE_DIR, "logs")
+	log_path = os.path.join(BASE_DIR, "logs/webapp")
 	log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
 
 	with open(os.path.join(log_path, log_name), "a") as log:
 
 		log.write('\n' + str(text) + '\n')
 
-	log.close()
+		log.close()
 
 
 def install_packages():
@@ -61,6 +66,9 @@ try:
 	import yaml
 	from flask import Flask
 	import matplotlib.pyplot as plt
+	import cv2 as cv
+	import folium
+	import requests
 
 except Exception as e:
 	install_packages()
@@ -68,8 +76,12 @@ except Exception as e:
 finally:
 
 	try:
+		import yaml
 		from flask import Flask
 		import matplotlib.pyplot as plt
+		import cv2 as cv
+		import folium
+		import requests
 
 	except Exception as e:
 
@@ -87,7 +99,10 @@ finally:
 
 
 try:
-	pass
+	from scripts.api import Api
+	from scripts.graphs import Chart
+	from scripts.maps import Map
+	from scripts.video import Video
 
 except Exception as e:
 
@@ -100,9 +115,9 @@ except Exception as e:
 # =============================================================================
 
 
-TEMPLATES_FOLDER = os.path.join(BASE_DIR, 'res/templates')
-SETTINGS_FOLDER = os.path.join(BASE_DIR, 'res/settings')
-LANGUAGE_FOLDER = os.path.join(BASE_DIR, 'res/i18n')
+SETTINGS_PATH = os.path.join(BASE_DIR, 'res/settings/settings.yaml')
+TEMPLATES_FOLDER = os.path.join(BASE_DIR, 'res/templates/')
+LANGUAGE_FOLDER = os.path.join(BASE_DIR, 'res/i18n/')
 APP = Flask(__name__)
 
 
@@ -130,9 +145,9 @@ class Settings:
 		return "Settings class"
 
 	
-	def return_settings_value(self, value):
+	def get_settings_value(self, value):
 		
-		return str(self.settings_data["settings"][value])
+		return str(self.settings_data[value])
 
 
 # Language class
@@ -154,9 +169,24 @@ class Language:
 		return "Language class"
 
 
-	def return_text(self, text):
+	def get_text(self, text):
 
 		return self.language_data[text]
+
+
+# =============================================================================
+# Instantiate classes
+# =============================================================================
+
+
+_settings = Settings(SETTINGS_PATH)
+_language = Language(LANGUAGE_FOLDER + _settings.get_settings_value("language") + ".json")
+
+if _settings.get_settings_value("debug"):
+
+	print(f"{_settings}\t OK")
+	print(f"{_language}\t OK")
+
 
 # =============================================================================
 # Routes
@@ -191,8 +221,25 @@ def process_data_view():
 def main():
 
 	print("start")
-	APP.run()
+	# APP.run()
+	
+	_api = Api(
+		"http://127.0.0.1:80",
+		os.path.join(BASE_DIR, "res/settings"),
+		os.path.join(BASE_DIR, "logs/cansat"),
+		os.path.join(BASE_DIR, "data/"))
 
-# if __name__ == '__main__':
+	# print(json.dumps(_api.get_cansat_status(), sort_keys=True, indent=4))
+	# print(_api.start_recording())
+	# print(_api.stop_recording())
+	# print(_api.enable_encryption())
+	# print(_api.disable_encryption())
+	# print(_api.start_buzzer())
+	# print(_api.stop_buzzer())
+	# _api.get_logs()
+	_api.get_recorded_data()
+	# print(_api.shutdown_cansat())
 
-# 	main()
+if __name__ == '__main__':
+
+	main()

@@ -1,0 +1,13 @@
+{
+	"status": "/api/cansat/status",
+	"download": "/api/download",
+	"start_recording": "/api/capture/start",
+	"stop_recording": "/api/capture/stop",
+	"start_encryption": "/api/encryption/start",
+	"stop_encryption": "/api/encryption/stop",
+	"start_buzzer": "/api/buzzer/start",
+	"stop_buzzer": "/api/buzzer/stop",
+	"shutdown": "/api/cansat/shutdown",
+	"shutdown_status": "/api/cansat/status/shutdown",
+	"logs": "/api/cansat/logs"
+}

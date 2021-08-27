@@ -1,0 +1,943 @@
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[10:57:09] [cansat/63] [INFO] Starting capture
+[10:57:10] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[10:57:09] [cansat/63] [INFO] Starting capture
+[10:57:10] [cansat/70] [INFO] Stopping capture
+[12:36:29] [cansat/63] [INFO] Starting capture
+[12:36:30] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[10:57:09] [cansat/63] [INFO] Starting capture
+[10:57:10] [cansat/70] [INFO] Stopping capture
+[12:36:29] [cansat/63] [INFO] Starting capture
+[12:36:30] [cansat/70] [INFO] Stopping capture
+[12:37:26] [cansat/63] [INFO] Starting capture
+[12:37:27] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[10:57:09] [cansat/63] [INFO] Starting capture
+[10:57:10] [cansat/70] [INFO] Stopping capture
+[12:36:29] [cansat/63] [INFO] Starting capture
+[12:36:30] [cansat/70] [INFO] Stopping capture
+[12:37:26] [cansat/63] [INFO] Starting capture
+[12:37:27] [cansat/70] [INFO] Stopping capture
+[14:55:40] [cansat/63] [INFO] Starting capture
+[14:55:41] [cansat/70] [INFO] Stopping capture
+[16:28:05] [cansat/26] [INFO] Initializing cansat ...
+[16:28:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:28:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:28:05] [cansat/84] [INFO] Running
+[16:29:05] [cansat/26] [INFO] Initializing cansat ...
+[16:29:05] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[16:29:05] [cansat/52] [INFO] Initialization done. Starting ...
+[16:29:05] [cansat/84] [INFO] Running
+[16:29:37] [cansat/63] [INFO] Starting capture
+[16:29:38] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[16:29:38] [cansat/60] [DEBUG] capture : Truesaving : False
+[16:29:54] [cansat/70] [INFO] Stopping capture
+[17:54:15] [cansat/26] [INFO] Initializing cansat ...
+[17:54:15] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[17:54:15] [cansat/52] [INFO] Initialization done. Starting ...
+[17:54:15] [cansat/84] [INFO] Running
+[19:05:06] [cansat/26] [INFO] Initializing cansat ...
+[19:05:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:05:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:05:06] [cansat/84] [INFO] Running
+[19:19:04] [cansat/63] [INFO] Starting capture
+[19:23:06] [cansat/26] [INFO] Initializing cansat ...
+[19:23:06] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:23:06] [cansat/52] [INFO] Initialization done. Starting ...
+[19:23:06] [cansat/84] [INFO] Running
+[19:24:22] [cansat/63] [INFO] Starting capture
+[19:25:07] [cansat/59] [WARNING] Didn't start capture because already capturing or saving
+[19:25:07] [cansat/60] [DEBUG] capture : Truesaving : False
+[19:25:08] [cansat/70] [INFO] Stopping capture
+[19:25:44] [cansat/63] [INFO] Starting capture
+[19:25:45] [cansat/70] [INFO] Stopping capture
+[19:27:20] [cansat/63] [INFO] Starting capture
+[19:27:21] [cansat/70] [INFO] Stopping capture
+[19:27:26] [cansat/90] [INFO] Shutting down ...
+[19:28:19] [cansat/26] [INFO] Initializing cansat ...
+[19:28:19] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[19:28:19] [cansat/52] [INFO] Initialization done. Starting ...
+[19:28:19] [cansat/84] [INFO] Running
+[19:28:25] [cansat/63] [INFO] Starting capture
+[19:28:26] [cansat/70] [INFO] Stopping capture
+[19:29:09] [cansat/63] [INFO] Starting capture
+[19:29:10] [cansat/70] [INFO] Stopping capture
+[19:29:54] [cansat/63] [INFO] Starting capture
+[19:29:55] [cansat/70] [INFO] Stopping capture
+[19:30:16] [cansat/63] [INFO] Starting capture
+[19:30:17] [cansat/70] [INFO] Stopping capture
+[19:31:21] [cansat/63] [INFO] Starting capture
+[19:31:22] [cansat/70] [INFO] Stopping capture
+[19:32:24] [cansat/63] [INFO] Starting capture
+[19:32:25] [cansat/70] [INFO] Stopping capture
+[19:32:47] [cansat/63] [INFO] Starting capture
+[19:32:48] [cansat/70] [INFO] Stopping capture
+[19:33:29] [cansat/63] [INFO] Starting capture
+[19:33:30] [cansat/70] [INFO] Stopping capture
+[19:34:00] [cansat/63] [INFO] Starting capture
+[19:34:01] [cansat/70] [INFO] Stopping capture
+[19:34:06] [cansat/90] [INFO] Shutting down ...
+[10:41:02] [cansat/26] [INFO] Initializing cansat ...
+[10:41:02] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:41:02] [cansat/52] [INFO] Initialization done. Starting ...
+[10:41:02] [cansat/84] [INFO] Running
+[10:41:19] [cansat/63] [INFO] Starting capture
+[10:41:20] [cansat/70] [INFO] Stopping capture
+[10:41:26] [cansat/90] [INFO] Shutting down ...
+[10:42:50] [cansat/26] [INFO] Initializing cansat ...
+[10:42:50] [cansat/48] [ERROR] Error while initializing Thermal camera. It will be disabled for this run.
+[10:42:50] [cansat/52] [INFO] Initialization done. Starting ...
+[10:42:50] [cansat/84] [INFO] Running
+[10:43:03] [cansat/63] [INFO] Starting capture
+[10:43:04] [cansat/70] [INFO] Stopping capture
+[10:43:57] [cansat/63] [INFO] Starting capture
+[10:43:58] [cansat/70] [INFO] Stopping capture
+[10:44:31] [cansat/63] [INFO] Starting capture
+[10:44:32] [cansat/70] [INFO] Stopping capture
+[10:45:13] [cansat/63] [INFO] Starting capture
+[10:45:14] [cansat/70] [INFO] Stopping capture
+[10:47:13] [cansat/63] [INFO] Starting capture
+[10:47:14] [cansat/70] [INFO] Stopping capture
+[10:49:47] [cansat/63] [INFO] Starting capture
+[10:49:48] [cansat/70] [INFO] Stopping capture
+[10:57:09] [cansat/63] [INFO] Starting capture
+[10:57:10] [cansat/70] [INFO] Stopping capture
+[12:36:29] [cansat/63] [INFO] Starting capture
+[12:36:30] [cansat/70] [INFO] Stopping capture
+[12:37:26] [cansat/63] [INFO] Starting capture
+[12:37:27] [cansat/70] [INFO] Stopping capture
+[14:55:40] [cansat/63] [INFO] Starting capture
+[14:55:41] [cansat/70] [INFO] Stopping capture
+[14:56:23] [cansat/63] [INFO] Starting capture
+[14:56:24] [cansat/70] [INFO] Stopping capture
