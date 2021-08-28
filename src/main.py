@@ -268,10 +268,21 @@ create_theme(
 def load_login_texts():
 
 	texts = {}
-	texts["page_title"] = _language.get_text("login_title")
-	texts["title"] = _language.get_text("title")
+	texts["page_title"] = _language.get_text("login_page_title")
+	texts["login_title"] = _language.get_text("login_title")
+	texts["identification"] = _language.get_text("identification")
+	texts["username"] = _language.get_text("username")
+	texts["password"] = _language.get_text("password")
+	texts["login"] = _language.get_text("login")
+	texts["login_error"] = _language.get_text("login_error")
 
-	return
+	if _settings.get_settings_value('debug'):
+
+		print("------------------[TEXTS]------------------")
+		print(texts)
+		print("----------------[END TEXTS]----------------\n")
+
+	return texts
 
 
 # =============================================================================
@@ -281,6 +292,7 @@ def load_login_texts():
 
 # Login view:
 # 	- user must be logged to access other views
+# 	- username and password are stored at res/settings/auth.json
 @APP.route('/', methods=['GET', 'POST'])
 def login_view():
 
@@ -290,9 +302,14 @@ def login_view():
 
 	error = None
 
+	with open(os.path.join(SETTINGS_PATH, "auth.json"), 'r') as file:
+
+		auth_data = json.load(file)
+		file.close()
+
 	if request.method == 'POST':
 
-		if request.form['username'] != 'lcsat' or request.form['password'] != 'lcsat2021':
+		if request.form['username'] != auth_data["username"] or request.form['password'] != auth_data["password"]:
 
 			error = texts["login_error"]
 		
@@ -300,7 +317,7 @@ def login_view():
 
 			return redirect(url_for('commands'))
 
-	return render_template('login.html', theme=theme, error=error)
+	return render_template('login.html', theme=theme, error=error, texts=texts)
 
 
 # Commands views:
