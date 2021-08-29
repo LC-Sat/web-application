@@ -27,6 +27,7 @@ import zipfile
 import shutil
 import time
 import io
+import pickle
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -483,14 +484,22 @@ def commands_view():
 	return render_template('commands.html', texts=texts, js=js, terminal=terminal)
 
 
-
 # Process_data_view:
 # 	- web application to process the downloaded data
 @APP.route('/process_data')
 def process_data_view():
 	
 	available_data = {}
-	return
+
+	folders = os.listdir(os.path.join(DATA_PATH, "normal"))
+	available_data["folders"] = folders
+
+	if request.method == 'POST':
+
+		return redirect(url_for("process_data_functions_view", data_set=request.form.get("data")))
+
+	return render_template('process_data.html', available_data=available_data)
+
 
 # @login_required
 @APP.route('/process_data/functions/<int:data_set>')

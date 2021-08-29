@@ -25,9 +25,9 @@
 
 				<select name="data" id="data">
 
-					{% for data in available_data %}
+					{% for data in available_data.folders %}
 
-						<option value=""></option>
+						<option value="{{ data }}">{{ data }}</option>
 
 					{% endfor %}
 
