@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>LC-sat web application: Command pannel</title>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+
+	</head>
+
+	<body>
+		
+		<header id="header">
+			<h1>LC SAT</h1>
+		</header>
+
+		<article class="mainContainer">
+			
+			<form action="" method="post">
+				
+				<label for="data">Select your data set:</label>
+
+				<select name="data" id="data">
+
+					{% for data in available_data %}
+
+						<option value=""></option>
+
+					{% endfor %}
+
+				</select>
+
+				<input type="submit" value="submit">
+
+			</form>
+
+		</article>
+
+	</body>
+</html>

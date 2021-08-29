@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>LC-sat web application: Command pannel</title>
+		<title>{{ texts.commands_page_title }}</title>
 
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
@@ -37,12 +37,12 @@
 
 				<section id="commandsContainer">
 
-					<h1>Command Pannel</h1>
+					<h1>{{ texts.commands_title }}</h1>
 
 					<form action="" method="post" id="form">
 						<div id="div-cansatConnexion">
 							<input type="checkbox" class="circularButton running" name="connectToCansat" id="connectToCansat"></button>
-							<label for="connectToCansat">Connect to CanSat</label>
+							<label for="connectToCansat">{{ texts.connectToCansat }}</label>
 						</div>
 
 						<div>
@@ -50,40 +50,40 @@
 						  		<input type="checkbox" id="encryptionSwitch" name="encryptionSwitch" {{ js.switchState }} disabled>
 						  		<span class="slider round"></span>
 							</label>
-							<label for="encryptionSwitch">Encrypt data</label>
+							<label for="encryptionSwitch">{{ texts.encryptData }}</label>
 						</div>
 
 						<div>
 							<input type="checkbox" class="circularButton error" name="startRecord" id="startRecord" disabled></button>
-							<label for="startRecord">Start recording</label>
+							<label for="startRecord">{{ texts.startRecording }}</label>
 						</div>
 
 					</form>
 					
 				</section>
 
-				<button id="seePreviousData">See previous data</button>
+				<a id="seePreviousData" href="{{ url_for('process_data_view'} )}">{{ texts.seePreviousData }}</button>
 			</div>
 
 			<section id="console">
-				<h1>> Debug</h1>
+				<h1>> {{ texts.debug }}</h1>
 				<div id="consoleContent">
 
-					<p>>Running:        {{ terminal.running }}</p>
-					<p>>Capturing:      {{ terminal.capturing }}</p>
-					<p>Saving:          {{ terminal.saving }}</p>
-					<p>>Wifi:           {{ terminal.wifi }}</p>
-					<p>>Encryption:     {{ terminal.encryption }}</p>
-					<p>>Buzzer:         {{ terminal.buzzer }}</p>
-					<p>>Mode:           {{ terminal.mode }}</p>
-					<p>>Last data:      {{ terminal.last_data }}</p>
-					<p>>SENSORS:</p>
-					<p>>Camera:         {{ terminal.sensors.camera }}</p>
-					<p>>Bmp:            {{ terminal.sensors.bmp }}</p>
-					<p>>Accel:          {{ terminal.sensors.accel }}</p>
-					<p>>Gps:            {{ terminal.sensors.gps }}</p>
-					<p>>Thermal cam:    {{ terminal.sensors.th_cam }}</p>
-					<p>>humidity:       {{ terminal.sensors.humidity }}</p>
+					<p>>{{ texts.running }}:        {{ terminal.running }}</p>
+					<p>>{{ texts.capturing }}:      {{ terminal.capturing }}</p>
+					<p>>{{ texts.saving }}:          {{ terminal.saving }}</p>
+					<p>>{{ texts.wifi }}:           {{ terminal.wifi }}</p>
+					<p>>{{ texts.encryption }}:     {{ terminal.encryption }}</p>
+					<p>>{{ texts.buzzer }}:         {{ terminal.buzzer }}</p>
+					<p>>{{ texts.mode }}:           {{ terminal.mode }}</p>
+					<p>>{{ texts.lastData }}:      {{ terminal.last_data }}</p>
+					<p>> === {{ texts.sensors }} === </p>
+					<p>>{{ texts.camera }}:         {{ terminal.sensors.camera }}</p>
+					<p>>{{ texts.bmp }}:            {{ terminal.sensors.bmp }}</p>
+					<p>>{{ texts.accel }}:          {{ terminal.sensors.accel }}</p>
+					<p>>{{ texts.gps }}:            {{ terminal.sensors.gps }}</p>
+					<p>>{{ texts.thermalCam }}:    {{ terminal.sensors.th_cam }}</p>
+					<p>>{{ texts.humidity }}:       {{ terminal.sensors.humidity }}</p>
 					
 				</div>
 			</section>
@@ -91,12 +91,12 @@
 		</article>
 
 		<div class="modal" id="waitCansatModal">
-			<p>Waiting for Cansat ...</p>
+			<p>{{ texts.waitingForCansat }} ...</p>
 			<div class="loader"></div>
 		</div>
 
 		<div class="modal" id="stopRecordModal">
-			<p>Recoring data ...</p>
+			<p>{{ texts.recordingData }} ...</p>
 			<form action="" method="post" id="recordingForm">
 				
 				<input type="checkbox" name="stopRecord" id="stopRecord">

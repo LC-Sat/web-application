@@ -288,7 +288,40 @@ def load_login_texts():
 # Load all texts from the selected language for the commands page
 def load_commands_texts():
 
-	return
+	texts = {}
+	texts["commands_page_title"] = _language.get_text("commands_page_title")
+	texts["commands_title"] = _language.get_text("commands_title")
+	texts["connectToCansat"] = _language.get_text("connectToCansat")
+	texts["encryptData"] = _language.get_text("encryptData")
+	texts["startRecording"] = _language.get_text("startRecording")
+	texts["seePreviousData"] = _language.get_text("seePreviousData")
+	texts["debug"] = _language.get_text("debug")
+	texts["running"] = _language.get_text("running")
+	texts["capturing"] = _language.get_text("capturing")
+	texts["saving"] = _language.get_text("saving")
+	texts["wifi"] = _language.get_text("wifi")
+	texts["encryption"] = _language.get_text("seePreviousData")
+	texts["buzzer"] = _language.get_text("buzzer")
+	texts["mode"] = _language.get_text("mode")
+	texts["lastData"] = _language.get_text("lastData")
+	texts["sensors"] = _language.get_text("sensors")
+	texts["camera"] = _language.get_text("camera")
+	texts["bmp"] = _language.get_text("bmp")
+	texts["accel"] = _language.get_text("accel")
+	texts["gps"] = _language.get_text("gps")
+	texts["thermalCam"] = _language.get_text("thermalCam")
+	texts["humidity"] = _language.get_text("humidity")
+	texts["waitingForCansat"] = _language.get_text("waitingForCansat")
+	texts["recordingData"] = _language.get_text("recordingData")
+
+
+	if _settings.get_settings_value('debug'):
+
+		print("------------------[TEXTS]------------------")
+		print(texts)
+		print("----------------[END TEXTS]----------------\n")
+
+	return texts
 
 
 # =============================================================================
@@ -456,7 +489,15 @@ def commands_view():
 @APP.route('/process_data')
 def process_data_view():
 	
+	available_data = {}
 	return
+
+# @login_required
+@APP.route('/process_data/functions/<int:data_set>')
+def process_data_functions_view(data_set):
+
+	pass
+
 
 
 # =============================================================================
