@@ -63,36 +63,35 @@ function updateMemory(memoryCapacityValue) {
 
 updateMemory(100); /* update on loading */
 
-/* Console */
 
-const consoleElement = document.getElementById("consoleContent");
+/* Update form */
 
-function writeTextToConsole(text, type) {
-	var element = document.createElement("p");
-	element.innerHTML = text;
-	element.classList.add("consoleText");
-	element.classList.add(type);
-	consoleElement.appendChild(element);
-}
-
-
-/* Update buttons */
-
-const connectToCansat = document.getElementById("connectToCansat");
-const encryptionSwitch = document.getElementById("encryptionSwitch");
+const connectToCansatCheckbox = document.getElementById("connectToCansat");
+const encryptDataSwitch = document.getElementById("encryptionSwitch");
 const startRecord = document.getElementById("startRecord");
 
-var cansatConnected = false;
+const checkboxs = [encryptDataSwitch, startRecord];
 
-connectToCansat.addEventListener("click", () => {
-	console.log("start");
+checkboxs.forEach(checkbox => {
+	checkbox.addEventListener("change", () => {
+		document.getElementById("form").submit();
+	});
+});
 
-	while (cansatConnected == false) {
-		setTimeout(() => {
-			console.log("Waiting ...");
-		}, 2000);
-	}
+connectToCansatCheckbox.addEventListener("change", () => {
 
-	console.log("connected");
+	document.getElementById("connectToCansat").disabled = true;
+	document.getElementById("mainContainer").style.opacity = 0.3;
+	document.getElementById("header").style.opacity = 0.3;
+	document.getElementById("batteryBackground").style.opacity = 0.3;
+	document.getElementById("memoryBackground").style.opacity = 0.3;
+	document.getElementById("waitCansatModal").classList.add('visible');
+	document.getElementById("form").submit();
 
+});
+
+
+const stopRecord = document.getElementById("stopRecord");
+stopRecord.addEventListener("change", () => {
+	document.getElementById("recordingForm").submit();
 });

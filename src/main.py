@@ -124,7 +124,7 @@ DATA_PATH = os.path.join(BASE_DIR, 'data/')
 STATIC_PATH = os.path.join(BASE_DIR, 'src/static/')
 THEME_PATH = os.path.join(BASE_DIR, 'res/theme/')
 APP = Flask(__name__)
-
+USER_LOGIN = False
 
 # =============================================================================
 # Controllers class
@@ -285,6 +285,12 @@ def load_login_texts():
 	return texts
 
 
+# Load all texts from the selected language for the commands page
+def load_commands_texts():
+
+	return
+
+
 # =============================================================================
 # Routes
 # =============================================================================
@@ -295,8 +301,6 @@ def load_login_texts():
 # 	- username and password are stored at res/settings/auth.json
 @APP.route('/', methods=['GET', 'POST'])
 def login_view():
-
-	theme = _settings.get_settings_value("theme")
 
 	texts = load_login_texts()
 
@@ -315,22 +319,144 @@ def login_view():
 		
 		else:
 
-			return redirect(url_for('commands'))
+			return redirect(url_for('commands_view'))
 
-	return render_template('login.html', theme=theme, error=error, texts=texts)
+	return render_template('login.html', error=error, texts=texts)
 
 
 # Commands views:
 # 	- communicates with the CanSat to send oders and download real-time data. 
-@APP.route('/commands')
+@APP.route('/commands', methods=['GET', 'POST'])
 def commands_view():
-	pass
+
+	texts = load_commands_texts()
+
+	js = {}
+	js["canSatConnected"] = "disconnected"
+	js["switchState"] = ""
+	js["recordingState"] = ""
+	terminal = {  
+			  		"running": "",  
+			  		"capturing": "",  
+				  	"saving": "",  
+				  	"wifi": "",  
+				  	"encryption": "",  
+				  	"buzzer": "",  
+				  	"mode": "",
+				  	"last_data": "", 
+				  	"sensors": {  
+						"camera": "",  
+						"bmp": "",  
+						"accel": "",  
+						"gps": "",  
+						"th_cam": "",  
+						"humidity": ""  
+					}  
+				}
+
+	if request.method == 'POST':
+
+		if request.form.get("connectToCansat") != None:
+
+			# try to contact cansat:
+			# 	- if failure then try again
+			# 	- if success then unlock other functions
+			
+			while True:
+
+				time.sleep(1)
+
+				# Try to contact Cansat:
+				# -	 if error then wait 1s and retry. 
+				try:
+					c = _api.get_cansat_status()
+
+				except Exception as e:
+					
+					c = ""
+
+				if c != "":
+
+					break
+
+			terminal = c
+			js["canSatConnected"] = "connected"
+
+			return render_template('commands.html', texts=texts, js=js, terminal=terminal)
+
+
+		elif request.form.get("encryptionSwitch") != None:
+
+			# Enable data encryption
+			r = _api.enable_encryption()
+
+			if r != "" or r != False:
+
+				js["canSatConnected"] = "connected"
+				js["switchState"] = "checked"
+
+				terminal = _api.get_cansat_status()
+
+				return render_template('commands.html', texts=texts, js=js, terminal=terminal)
+
+			else:
+
+				print("Error or value is not updated ")
+
+
+		elif request.form.get("startRecord") != None:
+
+			# Start record
+			print("STARTING RECORD")
+			_api.start_recording()
+			js["recordingState"] = "recording"
+			
+			terminal = _api.get_cansat_status()
+
+			return render_template('commands.html', texts=texts, js=js, terminal=terminal)
+
+
+		elif request.form.get("stopRecord") != None:
+
+			# Stop recording and redirect to process data pages
+			
+			_api.stop_recording()
+			return redirect(url_for('process_data_view'))
+
+
+		elif request.form.get("encryptionSwitch") == None:
+
+			# Disable data encryption
+			r = _api.disable_encryption()
+
+			if r != "" or r != False:
+
+				js["canSatConnected"] = "connected"
+				js["switchState"] = ""
+
+				terminal = _api.get_cansat_status()
+
+				return render_template('commands.html', texts=texts, js=js, terminal=terminal)
+
+			else:
+
+				print("Error or value is not updated ")
+
+
+		else:
+
+			pass
+
+	return render_template('commands.html', texts=texts, js=js, terminal=terminal)
+
+
 
 # Process_data_view:
 # 	- web application to process the downloaded data
 @APP.route('/process_data')
 def process_data_view():
-	pass
+	
+	return
 
 
 # =============================================================================
@@ -351,6 +477,7 @@ def reload():
 def main():
 
 	APP.run()
+
 
 if __name__ == '__main__':
 

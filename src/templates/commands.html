@@ -6,10 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>LC-sat web application: Command pannel</title>
 
-		<link rel="stylesheet" href="../css/base.css">
-		<link rel="stylesheet" href="../css/commands.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/commands.css')}}">
 
-		<script src="../js/commands.js" defer></script>
+		<script src="{{ url_for('static', filename='js/commands.js')}}" defer></script>
 	</head>
 
 	<body>
@@ -19,58 +20,129 @@
 		</header>
 
 		<div id="batteryBackground">
-			<img src="../img/battery.png" id="battery">
+			<img src="{{ url_for('static', filename='img/battery.png')}}" id="battery">
 			<p id="batteryIndicator">75%</p>
 			<div id="batteryCharge"></div>
 		</div>
 
 		<div id="memoryBackground">
-			<img src="../img/memory.png" id="memory">
+			<img src="{{ url_for('static', filename='img/memory.png')}}" id="memory">
 			<p id="memoryIndicator">75%</p>
 			<div id="memoryCapacity"></div>
 		</div>
 
-		<article class="mainContainer">
+		<article class="mainContainer" id="mainContainer">
 
-			<section id="commandsContainer">
+			<div class="flex-container">
 
-				<h1>Command Pannel</h1>
+				<section id="commandsContainer">
 
-				<form>
-					<div>
-						<input type="button" class="circularButton running" name="connectToCansat" id="connectToCansat"></button>
-						<label for="connectToCansat">Connect to CanSat</label>
-					</div>
+					<h1>Command Pannel</h1>
 
-					<div>
-						<label class="switch">
-					  		<input type="checkbox" id="encryptionSwitch" name="encryptionSwitch" disabled>
-					  		<span class="slider round"></span>
-						</label>
-						<label for="encryptionSwitch">Encrypt data</label>
-					</div>
+					<form action="" method="post" id="form">
+						<div id="div-cansatConnexion">
+							<input type="checkbox" class="circularButton running" name="connectToCansat" id="connectToCansat"></button>
+							<label for="connectToCansat">Connect to CanSat</label>
+						</div>
 
-					<div>
-						<input type="button" class="circularButton error" name="startRecord" id="startRecord" disabled></button>
-						<label for="startRecord">Start recording</label>
-					</div>
+						<div>
+							<label class="switch">
+						  		<input type="checkbox" id="encryptionSwitch" name="encryptionSwitch" {{ js.switchState }} disabled>
+						  		<span class="slider round"></span>
+							</label>
+							<label for="encryptionSwitch">Encrypt data</label>
+						</div>
 
-				</form>
-				
-			</section>
+						<div>
+							<input type="checkbox" class="circularButton error" name="startRecord" id="startRecord" disabled></button>
+							<label for="startRecord">Start recording</label>
+						</div>
 
-			<button id="seePreviousData">See previous data</button>
+					</form>
+					
+				</section>
+
+				<button id="seePreviousData">See previous data</button>
+			</div>
 
 			<section id="console">
 				<h1>> Debug</h1>
 				<div id="consoleContent">
 
-					<p class="consoleText error">test</p>
+					<p>>Running:        {{ terminal.running }}</p>
+					<p>>Capturing:      {{ terminal.capturing }}</p>
+					<p>Saving:          {{ terminal.saving }}</p>
+					<p>>Wifi:           {{ terminal.wifi }}</p>
+					<p>>Encryption:     {{ terminal.encryption }}</p>
+					<p>>Buzzer:         {{ terminal.buzzer }}</p>
+					<p>>Mode:           {{ terminal.mode }}</p>
+					<p>>Last data:      {{ terminal.last_data }}</p>
+					<p>>SENSORS:</p>
+					<p>>Camera:         {{ terminal.sensors.camera }}</p>
+					<p>>Bmp:            {{ terminal.sensors.bmp }}</p>
+					<p>>Accel:          {{ terminal.sensors.accel }}</p>
+					<p>>Gps:            {{ terminal.sensors.gps }}</p>
+					<p>>Thermal cam:    {{ terminal.sensors.th_cam }}</p>
+					<p>>humidity:       {{ terminal.sensors.humidity }}</p>
 					
 				</div>
 			</section>
 
 		</article>
+
+		<div class="modal" id="waitCansatModal">
+			<p>Waiting for Cansat ...</p>
+			<div class="loader"></div>
+		</div>
+
+		<div class="modal" id="stopRecordModal">
+			<p>Recoring data ...</p>
+			<form action="" method="post" id="recordingForm">
+				
+				<input type="checkbox" name="stopRecord" id="stopRecord">
+
+			</form>
+		</div>
+
+		<script defer>
+
+			function updateForm(cansatConnexion) {
+				
+				// const mainContainer = document.getElementById("mainContainer");
+				// const loadingModal = document
+				
+				if (cansatConnexion == "connected") {
+
+					document.getElementById("div-cansatConnexion").style.display = 'none';
+					document.getElementById("connectToCansat").disabled = true;
+					document.getElementById("encryptionSwitch").disabled = false;
+					document.getElementById("startRecord").disabled = false;
+					document.getElementById("waitCansatModal").classList.remove('visible');
+					
+				}
+				
+			}
+			
+			updateForm("{{ js.canSatConnected }}");
+
+			function recordingProcess(recordingState) {
+
+				if(recordingState == "recording") {
+
+					document.getElementById("connectToCansat").disabled = true;
+					document.getElementById("mainContainer").style.opacity = 0.3;
+					document.getElementById("header").style.opacity = 0.3;
+					document.getElementById("batteryBackground").style.opacity = 0.3;
+					document.getElementById("memoryBackground").style.opacity = 0.3;
+					document.getElementById("stopRecordModal").classList.add('visible');
+
+				}
+
+			}
+
+			recordingProcess("{{ js.recordingState }}");
+
+		</script>
 
 	</body>
 

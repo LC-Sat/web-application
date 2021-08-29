@@ -1,5 +1,9 @@
 /* Mobile version */
 
+div.flex-container {
+	width: 100%;
+}
+
 #batteryBackground {
 	position: fixed;
 	top: 0;
@@ -199,6 +203,37 @@ form div {
 	background: none;
 }
 
+div.modal {
+	display: none;
+}
+
+div.modal p {
+	color: var(--textColor);
+	font-size: 2em;
+}
+
+div.modal.visible {
+	position: fixed;
+	display: block;
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+div.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
 
 /* Computer version */
 
@@ -211,5 +246,17 @@ form div {
 	#memoryBackground {
 		top: 0;
 		right: 6.5em;
+	}
+}
+
+@media all and (min-width: 1024px) {
+	
+	article {
+		display: row;
+	}
+
+	div.flex-container {
+		padding: 50px;
+		height: 100%;
 	}
 }

@@ -56,11 +56,11 @@ class Api:
 		# Request for Cansat Status
 
 		r = self.send_request(self.urls["status"])
-
 		if r == "":
-
+			print("api error")
 			return ""
 
+		print(r.content)
 		status = str(r.content).replace("b'", "").replace("\\n'", "")
 		return json.loads(status)
 

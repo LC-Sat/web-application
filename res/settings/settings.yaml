@@ -1,6 +1,6 @@
 # Config file
 
 theme: dark
-language: fr
-cansatIp: https://customIP
+language: en-us
+cansatIp: http://127.0.0.1
 debug: true
