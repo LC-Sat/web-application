@@ -29,5 +29,12 @@
 	"thermalCam": "Thermal cam",
 	"humidity": "Humidity",
 	"waitingForCansat": "Waiting for CanSat ...",
-	"recordingData": "Recording data ..."
+	"recordingData": "Recording data ...",
+	"selectDatasetPageTitle": "LC-sat web application: Select data set",
+	"selectDataSet": "Select your data set",
+	"submit": "Submit",
+	"processDataFunctionsPageTitle": "LC-sat web application: Process your data",
+	"maps": "Maps",
+	"videos": "Videos",
+	"charts": "Charts"
 }

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>LC-sat web application: Command pannel</title>
+		<title>{{ texts.selectDatasetPageTitle }}</title>
 
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
@@ -21,7 +21,7 @@
 			
 			<form action="" method="post">
 				
-				<label for="data">Select your data set:</label>
+				<label for="data">{{ texts.selectDataSet }}</label>
 
 				<select name="data" id="data">
 
@@ -33,7 +33,7 @@
 
 				</select>
 
-				<input type="submit" value="submit">
+				<input type="submit" value="{{ texts.submit }}">
 
 			</form>
 

@@ -205,8 +205,7 @@ _settings = Settings(
 	os.path.join(SETTINGS_PATH, 'settings.yaml')
 	)
 
-DEBUG = _settings.debug = _settings.get_settings_value("debug")
-_settings.debug = DEBUG
+DEBUG = _settings.get_settings_value("debug")
 
 _language = Language(
 	DEBUG,
@@ -221,12 +220,18 @@ _api = Api(
 	DATA_PATH
 	)
 
+_map = Map(
+	DEBUG,
+	os.path.join(SETTINGS_PATH, "maps.json")
+	)
+
 if _settings.get_settings_value("debug"):
 
 	print("------------------[DEBUG]------------------")
 	print(f"DEBUG | {_settings}\t OK")
 	print(f"DEBUG | {_language}\t OK")
 	print(f"DEBUG | {_api}\t      OK")
+	print(f"DEBUG | {_map}\t      OK")
 	print("----------------[END DEBUG]----------------\n")
 
 
@@ -321,6 +326,36 @@ def load_commands_texts():
 		print("------------------[TEXTS]------------------")
 		print(texts)
 		print("----------------[END TEXTS]----------------\n")
+
+	return texts
+
+
+# Load all texts from the selected language for the chose data set page
+def load_chose_data_set_texts():
+
+	texts = {}
+	texts["selectDatasetPageTitle"] = _language.get_text("selectDatasetPageTitle")
+	texts["selectDataSet"] = _language.get_text("selectDataSet")
+	texts["submit"] = _language.get_text("submit")
+
+	if _settings.get_settings_value('debug'):
+
+		print("------------------[TEXTS]------------------")
+		print(texts)
+		print("----------------[END TEXTS]----------------\n")
+
+
+	return texts
+
+
+# Load all texts from the selected language for the select process data function
+def load_process_data_functions_texts():
+
+	texts = {}
+	texts["processDataFunctionsPageTitle"] = _language.get_text("processDataFunctionsPageTitle")
+	texts["maps"] = _language.get_text("maps")
+	texts["videos"] = _language.get_text("videos")
+	texts["charts"] = _language.get_text("charts")
 
 	return texts
 
@@ -490,6 +525,7 @@ def commands_view():
 def process_data_view():
 	
 	available_data = {}
+	texts = load_chose_data_set_texts()
 
 	folders = os.listdir(os.path.join(DATA_PATH, "normal"))
 	available_data["folders"] = folders
@@ -505,8 +541,29 @@ def process_data_view():
 @APP.route('/process_data/functions/<int:data_set>')
 def process_data_functions_view(data_set):
 
+	texts = load_process_data_functions_texts()
+	data = {}
+	data['set'] = data_set
+	
+	return render_template('process_index.html', text=text, data=data)
+
+
+@APP.route("/process_data/map/<int:data_set>")
+def process_data_map_view(data_set):
+
 	pass
 
+
+@APP.route("/process_data/video/<int:data_set>")
+def process_data_video_view(data_set):
+
+	pass
+
+
+@APP.route("/process_data/chart/<int:data_set>")
+def process_data_chart_view(data_set):
+
+	pass
 
 
 # =============================================================================
