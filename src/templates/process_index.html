@@ -20,21 +20,21 @@
 		<article class="mainContainer">
 			
 			<div>
-				<a href="{{ url_for('process_data_map_view', data_set=) }}">
+				<a href="/process_data/map/{{ data.set }}">
 					<img src="{{ url_for('static', filename='img/map.png')}}" alt="{{ texts.maps }}">
 					<h1>{{ texts.maps }}</h1>
 				</a>
 			</div>
 
 			<div>
-				<a href="{{ url_for('process_data_video_view') }}">
+				<a href="{{ url_for('process_data_video_view', data_set='{{ data.set }}') }}">
 					<img src="{{ url_for('static', filename='img/video.png')}}" alt="{{ texts.videos }}">
 					<h1>{{ texts.videos }}</h1>
 				</a>
 			</div>
 
 			<div>
-				<a href="{{ url_for('process_data_chart_view') }}">
+				<a href="{{ url_for('process_data_chart_view', data_set='{{ data.set }}') }}">
 					<img src="{{ url_for('static', filename='img/chart.png')}}" alt="{{ texts.charts }}">
 					<h1>{{ texts.charts }}</h1>
 				</a>

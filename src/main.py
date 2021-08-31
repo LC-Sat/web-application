@@ -125,6 +125,7 @@ DATA_PATH = os.path.join(BASE_DIR, 'data/')
 STATIC_PATH = os.path.join(BASE_DIR, 'src/static/')
 THEME_PATH = os.path.join(BASE_DIR, 'res/theme/')
 APP = Flask(__name__)
+APP.config['UPLOAD_FOLDER'] = "media/"
 USER_LOGIN = False
 
 # =============================================================================
@@ -360,6 +361,12 @@ def load_process_data_functions_texts():
 	return texts
 
 
+# Load all texts from the selected language for the map view
+def load_map_texts():
+
+	texts = {}
+	return texts
+
 # =============================================================================
 # Routes
 # =============================================================================
@@ -521,7 +528,7 @@ def commands_view():
 
 # Process_data_view:
 # 	- web application to process the downloaded data
-@APP.route('/process_data')
+@APP.route('/process_data', methods=['GET', 'POST'])
 def process_data_view():
 	
 	available_data = {}
@@ -532,35 +539,71 @@ def process_data_view():
 
 	if request.method == 'POST':
 
-		return redirect(url_for("process_data_functions_view", data_set=request.form.get("data")))
+		data_set = int(request.form.get("data"))
 
-	return render_template('process_data.html', available_data=available_data)
+		return redirect(url_for("process_data_functions_view", data_set=data_set))
+
+	return render_template('process_data.html', available_data=available_data, texts=texts)
 
 
 # @login_required
-@APP.route('/process_data/functions/<int:data_set>')
+@APP.route('/process_data/functions/<int:data_set>', methods=['GET', 'POST'])
 def process_data_functions_view(data_set):
 
 	texts = load_process_data_functions_texts()
 	data = {}
-	data['set'] = data_set
+	data['set'] = str(data_set)
 	
-	return render_template('process_index.html', text=text, data=data)
+	return render_template('process_index.html', texts=texts, data=data)
 
 
-@APP.route("/process_data/map/<int:data_set>")
+@APP.route("/process_data/map/<data_set>", methods=['GET', 'POST'])
 def process_data_map_view(data_set):
 
-	pass
 
+	with open(os.path.join(SETTINGS_PATH, "maps.json")) as file:
 
-@APP.route("/process_data/video/<int:data_set>")
+		map_config = json.load(file)
+		file.close()
+
+	texts = load_map_texts()
+
+	default_data = {}
+	default_data["mapTitle"] = map_config['defaultTitle']
+	default_data["iconsColor"] = map_config['iconsColor']
+	default_data["defaultIconsColor"] = map_config['icon_default_color']
+	default_data["defaultIcon"] = map_config["defaultIcon"]
+	default_data["icons"] = map_config["icons"]
+	default_data["zoomStart"] = map_config["defaultZoom"]
+
+	if request.method == 'POST':
+
+		with open(os.path.join(DATA_PATH, "normal/" + str(data_set)) + "/data.bin", "rb") as file:
+
+			data =  pickle.load(file)
+			file.close()
+
+		_map.create_map(
+			data["lat"],
+			data["lon"],
+			str(request.form.get("mapTitle")),
+			str(request.form.get("iconTypes")),
+			str(request.form.get("iconsColor")),
+			int(request.form.get("zoomStart")),
+			os.path.join(BASE_DIR, 'src/templates/')
+			)
+
+		return render_template("map.html")
+
+	return render_template("maps.html", texts=texts, default_data=default_data)
+
+@APP.route("/process_data/video/<data_set>")
 def process_data_video_view(data_set):
 
 	pass
 
 
-@APP.route("/process_data/chart/<int:data_set>")
+@APP.route("/process_data/chart/<data_set>")
 def process_data_chart_view(data_set):
 
 	pass

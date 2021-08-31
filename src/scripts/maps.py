@@ -4,8 +4,8 @@
 
 
 import folium
-import numpy as np
 import os
+import json
 
 
 # =============================================================================
@@ -22,7 +22,7 @@ class Map:
 
 		with open(tiles_file, 'r') as file:
 
-			self.tiles = json.loads(file)
+			self.tiles = json.load(file)
 			file.close()
 
 
@@ -33,7 +33,7 @@ class Map:
 
 	def create_map(self, latitude, longitude, title, icon, color, zoom_start, map_destination):
 
-		m = folium.Map(location = [latitude[0], longitude[0]], zoom_start = zoom_start, title = title)
+		m = folium.Map(location = [latitude[0], longitude[0]], zoom_start = zoom_start, title = title, control_scale=True)
 
 		if self.debug:
 
@@ -47,17 +47,34 @@ class Map:
 			print(f"MAP | map destination: {str(map_destination)}")
 			print("---------------[END MAP]---------------\n")
 
-		for tile in tiles["tiles"]:
-
-			folium.TileLayer(str(tile)).add_to(m)
-
 		for i in range(0, len(latitude) - 1):
 
-			folium.Marker(
-			    [latitude[i], longitude[i]],
-			    popup = "<i>" + str(latitude[i]) + " | " + str(longitude[i]) + "</i>",
-			    icon = folium.icon(icon=str(icon), color=str(color))
-			).add_to(m)
+			try:
+
+				folium.Marker(
+				    location=[latitude[i], longitude[i]],
+				    icon = folium.Icon(color=color, icon=icon),
+				).add_to(m)
+
+			except Exception as e:
+
+				print(e)
+
+				break
+
+		try:
+
+			for tile in self.tiles["tiles"]:
+
+				folium.TileLayer(str(tile)).add_to(m)
+				print(tile)
+
+		except Exception as e:
+
+			print(e)
+			pass
+
+		folium.LayerControl().add_to(m)
 
 		m.save(os.path.join(map_destination, "map.html"))
 

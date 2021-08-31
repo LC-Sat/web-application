@@ -23,24 +23,50 @@
 			<form action="" method="post">
 
 				<label for="mapTitle">Map title:</label>
-				<input type="text" value="" id="mapTitle" placeholder="Insert map title" name="mapTitle">
+				<input type="text" value="{{ default_data.mapTitle }}" id="mapTitle" placeholder="Insert map title" name="mapTitle">
 
 				<label for="iconsColor">Icons color:</label>
-				<input type="color" value="" name="iconsColor" id="iconsColor">
+				<select name="iconsColor" id="iconsColor">
+
+					{% for iconColor in default_data.iconsColor %}
+
+						{% if iconColor == default_data.defaultIconsColor %}
+
+							<option value="{{ iconColor }}" selected>{{ iconColor }}</option>
+
+						{% else %}
+
+							<option value="{{ iconColor }}">{{ iconColor }}</option>
+						
+						{% endif %}
+
+					{% endfor %}
+
+				</select>
 
 				<label for="iconType">Select icon:</label>
 				<select name="iconTypes" id="iconTypes">
 
-					<option value=""></option>
+					{% for icon in default_data.icons %}
+
+						{% if icon == default_data.defaultIcon %}
+
+							<option value="{{ icon }}" selected>{{ icon }}</option>
+
+						{% else %}
+
+							<option value="{{ icon }}">{{ icon }}</option>
+						
+						{% endif %}
+
+					{% endfor %}
 
 				</select>
 
-				<label for="iconPopup">Activate popup:</label>
-				<input name="iconPopup" id="iconPopup" type="checkbox" checked>
-
 				<label for="zoomStart">Select zoom start:</label>
-				<input type="number" name="zoomStart" id="zoomStart" value="" min="1" max="18">
+				<input type="number" name="zoomStart" id="zoomStart" value="{{ default_data.zoomStart }}" min="1" max="18">
 
+				<input type="submit">
 
 			</form>
 
