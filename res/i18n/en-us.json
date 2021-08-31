@@ -36,5 +36,10 @@
 	"processDataFunctionsPageTitle": "LC-sat web application: Process your data",
 	"maps": "Maps",
 	"videos": "Videos",
-	"charts": "Charts"
+	"charts": "Charts",
+	"mapPageTitle": "LC-sat web application: Maps",
+	"mapTitle": "Map title",
+	"iconsColor": "Icons color",
+	"selectIcon": "Select icon",
+	"selectZoomStart": "Starting zoom at"
 }

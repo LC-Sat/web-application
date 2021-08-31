@@ -36,5 +36,10 @@
 	"processDataFunctionsPageTitle": "LC-sat web application: Annalyser vos données",
 	"maps": "Cartes",
 	"videos": "Vidéos",
-	"charts": "Graphiques"
+	"charts": "Graphiques",
+	"mapPageTitle": "LC-sat web application: Cartes",
+	"mapTitle": "Titre de la carte",
+	"iconsColor": "Couleur des icons",
+	"selectIcon": "Choisissez l'icon",
+	"selectZoomStart": "Zoom de départ"
 }

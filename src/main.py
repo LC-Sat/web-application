@@ -365,7 +365,15 @@ def load_process_data_functions_texts():
 def load_map_texts():
 
 	texts = {}
+	texts["mapPageTitle"] = _language.get_text("mapPageTitle")
+	texts["mapTitle"] = _language.get_text("mapTitle")
+	texts["iconsColor"] = _language.get_text("iconsColor")
+	texts["selectIcon"] = _language.get_text("selectIcon")
+	texts["selectZoomStart"] = _language.get_text("selectZoomStart")
+	texts["submit"] = _language.get_text("submit")
+
 	return texts
+
 
 # =============================================================================
 # Routes

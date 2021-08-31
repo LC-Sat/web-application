@@ -5,6 +5,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import json
 
 
 # =============================================================================
@@ -15,7 +16,7 @@ import numpy as np
 class Chart:
 
 
-	def __init__(self):
+	def __init__(self, debug):
 
 		pass
 

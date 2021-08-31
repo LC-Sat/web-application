@@ -5,7 +5,7 @@
 	
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ texts.commands_page_title }}</title>
+		<title>{{ texts.mapPageTitle }}</title>
 
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
@@ -22,10 +22,10 @@
 			
 			<form action="" method="post">
 
-				<label for="mapTitle">Map title:</label>
+				<label for="mapTitle">{{ texts.mapTitle }}:</label>
 				<input type="text" value="{{ default_data.mapTitle }}" id="mapTitle" placeholder="Insert map title" name="mapTitle">
 
-				<label for="iconsColor">Icons color:</label>
+				<label for="iconsColor">{{ texts.iconsColor }}:</label>
 				<select name="iconsColor" id="iconsColor">
 
 					{% for iconColor in default_data.iconsColor %}
@@ -44,7 +44,7 @@
 
 				</select>
 
-				<label for="iconType">Select icon:</label>
+				<label for="iconType">{{ texts.selectIcon }}:</label>
 				<select name="iconTypes" id="iconTypes">
 
 					{% for icon in default_data.icons %}
@@ -63,10 +63,10 @@
 
 				</select>
 
-				<label for="zoomStart">Select zoom start:</label>
+				<label for="zoomStart">{{ texts.selectZoomStart }}:</label>
 				<input type="number" name="zoomStart" id="zoomStart" value="{{ default_data.zoomStart }}" min="1" max="18">
 
-				<input type="submit">
+				<input type="submit" value="{{ texts.submit }}">
 
 			</form>
 
