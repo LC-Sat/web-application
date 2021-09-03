@@ -33,6 +33,7 @@ class Map:
 
 	def create_map(self, latitude, longitude, title, icon, color, zoom_start, map_destination):
 
+		# create map base
 		m = folium.Map(location = [latitude[0], longitude[0]], zoom_start = zoom_start, title = title, control_scale=True)
 
 		if self.debug:
@@ -47,6 +48,8 @@ class Map:
 			print(f"MAP | map destination: {str(map_destination)}")
 			print("---------------[END MAP]---------------\n")
 
+
+		# Add cansat recorded coordonates markers
 		for i in range(0, len(latitude) - 1):
 
 			try:
@@ -62,6 +65,8 @@ class Map:
 
 				break
 
+		# Add map tiles
+
 		try:
 
 			for tile in self.tiles["tiles"]:
@@ -76,6 +81,7 @@ class Map:
 
 		folium.LayerControl().add_to(m)
 
+		# Save map and store it to static/result folder
 		m.save(os.path.join(map_destination, "map.html"))
 
 		

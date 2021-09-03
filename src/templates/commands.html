@@ -19,7 +19,9 @@
 			<h1>LC SAT</h1>
 		</header>
 
-		<div id="batteryBackground">
+		<!-- Unprogrammed function -->
+
+		<!-- <div id="batteryBackground">
 			<img src="{{ url_for('static', filename='img/battery.png')}}" id="battery">
 			<p id="batteryIndicator">75%</p>
 			<div id="batteryCharge"></div>
@@ -29,7 +31,7 @@
 			<img src="{{ url_for('static', filename='img/memory.png')}}" id="memory">
 			<p id="memoryIndicator">75%</p>
 			<div id="memoryCapacity"></div>
-		</div>
+		</div> -->
 
 		<article class="mainContainer" id="mainContainer">
 
@@ -54,7 +56,7 @@
 						</div>
 
 						<div>
-							<input type="checkbox" class="circularButton error" name="startRecord" id="startRecord" disabled></button>
+							<input type="checkbox" class="circularButton error" name="startRecord" id="startRecord" disabled>>
 							<label for="startRecord">{{ texts.startRecording }}</label>
 						</div>
 
@@ -62,7 +64,7 @@
 					
 				</section>
 
-				<a id="seePreviousData" href="{{ url_for('process_data_view') }}">{{ texts.seePreviousData }}</button>
+				<a id="seePreviousData" href="{{ url_for('process_data_view') }}">{{ texts.seePreviousData }}</a>
 			</div>
 
 			<section id="console">

@@ -1,0 +1,92 @@
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+}
+
+form select, form input {
+	padding: 10px;
+	width: 200px;
+	margin: 10px;
+	text-align: center;
+	color: var(--textColor);
+	background-color: var(--componentsBackgroundColor);
+}
+
+form label {
+	width: 100%;
+	text-align: center;
+	color: var(--textColor);
+	font-size: 1.3em;
+	margin-top: 25px;
+}
+
+form input[type="submit"] {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-color: var(--headersBackgroundColor);
+}
+
+form input[type="text"] {
+	border-radius: 5px;
+}
+
+form select, form input[type="number"] {
+	border: none;
+}
+
+form ul {
+	margin-top: 25px;
+	list-style: none;
+}
+
+form ul li {
+	border: var(--textColor) solid 2px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+form ul li div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+form ul li div label {
+	font-size: 1em;
+}
+
+form ul li input[type="color"] {
+	height: 40px;
+}
+
+form ul li div input[type="checkbox"] {
+	height: 20px;
+}
+
+form ul li p {
+	margin-top: 20px;
+}
+
+@media all and (min-width: 1024px) {
+
+	form {
+		border: var(--textColor) 2px solid;
+	}
+
+	form ul li {
+		border: none;
+		border-bottom: var(--textColor) solid 2px;
+	}
+
+}

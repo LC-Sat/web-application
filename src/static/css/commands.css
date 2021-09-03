@@ -182,11 +182,18 @@ form div {
 
 #console {
 	margin-bottom: 50px;
-	height: 500px;	
+	height: 500px;
+	overflow-x: scroll;
 }
 
 #consoleContent {
 	width: 95%;
+	padding-top: 10px;
+	color: var(--textColor);
+}
+
+#consoleContent p {
+	margin: 5px	;
 }
 
 .consoleText {
@@ -235,6 +242,10 @@ div.loader {
 	100% { transform: rotate(360deg); }
 }
 
+#seePreviousData {
+	text-align: center;
+}
+
 /* Computer version */
 
 @media all and (min-width: 400px) {
@@ -251,12 +262,22 @@ div.loader {
 
 @media all and (min-width: 1024px) {
 	
-	article {
-		display: row;
+	article.mainContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 	}
 
 	div.flex-container {
 		padding: 50px;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#commandsContainer form {
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
 }

@@ -1,0 +1,8 @@
+
+expected an indented block (graphs.py, line 43)
+
+duplicate argument 'colors' in function definition (graphs.py, line 35)
+
+f-string: unmatched '(' (graphs.py, line 48)
+
+f-string: unmatched '(' (graphs.py, line 48)

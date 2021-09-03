@@ -41,5 +41,18 @@
 	"mapTitle": "Map title",
 	"iconsColor": "Icons color",
 	"selectIcon": "Select icon",
-	"selectZoomStart": "Starting zoom at"
+	"selectZoomStart": "Starting zoom at",
+	"dependingOn": "depending on",
+	"press": "Pressure",
+	"temp": "Temperature",
+	"alt": "Altitude",
+	"hum": "Humidity",
+	"ax": "X axis acceleration",
+	"ay": "Y axis acceleration",
+	"az": "Z axis acceleration",
+	"speed": "Velocity",
+	"qual": "GPS signal quality",
+	"sat": "Reachable satellites",
+	"in": "in",
+	"time": "Time"
 }

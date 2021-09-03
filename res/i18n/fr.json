@@ -41,5 +41,18 @@
 	"mapTitle": "Titre de la carte",
 	"iconsColor": "Couleur des icons",
 	"selectIcon": "Choisissez l'icon",
-	"selectZoomStart": "Zoom de départ"
+	"selectZoomStart": "Zoom de départ",
+	"dependingOn": "en fonction de",
+	"press": "Pression",
+	"temp": "Température",
+	"alt": "Altitude",
+	"hum": "Humidité",
+	"ax": "Accélération axe X",
+	"ay": "Accélération axe Y",
+	"az": "Accélération axe Z",
+	"speed": "Vitesse",
+	"qual": "Qualité du signal GPS",
+	"sat": "Satellites joignables",
+	"in": "en",
+	"time": "Temps"
 }

@@ -1,0 +1,92 @@
+{
+	"recordingFrequency": 0.3,
+	"defaultPointStyle": ".",
+	"pointsType": [
+		"",
+		".",
+		",",
+		"o",
+		"v",
+		"^",
+		"<",
+		">"	
+	],
+	"defaultLineStyle": "-",
+	"linesType": [
+		"-",
+		"--",
+		"-.",
+		":"
+	],
+	"defaultLineWidth": 1,
+	"data_config": {
+		"press": {	
+			"name": "pression",
+			"unit": "hPa",
+			"prefix": "press"
+		},
+		"temp":{
+			"name": "temperature",
+			"unit": "°C",
+			"prefix": "temp"
+		},
+		"alt": {
+			"name": "altitude",
+			"unit": "m",
+			"prefix": "alt"
+		},
+		"hum": {
+			"name": "humidity",
+			"unit": "",
+			"prefix": "hum"
+		},
+		"ax": {
+			"name": "x_acceleration",
+			"unit": "N",
+			"prefix": "ax"
+		},
+		"ay": {
+			"name": "y_acceleration",
+			"unit": "N",
+			"prefix": "ay"
+		},
+		"az": {
+			"name": "z_acceleration",
+			"unit": "N",
+			"prefix": "az"
+		},
+		"speed": {
+			"name": "velocity",
+			"unit": "m/s",
+			"prefix": "speed"
+		},
+		"qual": {
+			"name": "signal_quality",
+			"unit": "",
+			"prefix": "qual"
+		},
+		"sat": {
+			"name": "satellites",
+			"unit": "",
+			"prefix": "sat"
+		}
+	},
+	"nameToPrefix": {
+		"pression": "press",
+		"pressure": "press",
+		"temperature": "temp",
+		"température": "temp",
+		"altitude": "alt",
+		"humidity": "hum",
+		"humidité": "hum",
+		"x_acceleration": "ax",
+		"x_accélération": "ax",
+		"y_acceleration": "ay",
+		"y_accélération": "ay",
+		"z_accélération": "az",
+		"velocity": "speed",
+		"vitesse": "speed",
+		"satellites": "sat"
+	},
+	"defaultColor": "#000000"
+}

@@ -42,10 +42,9 @@ def log(text):
 	log_path = os.path.join(BASE_DIR, "logs/webapp")
 	log_name = str(date.today().strftime("%b-%d-%Y")+".txt")
 
-	with open(os.path.join(log_path, log_name), "a") as log:
+	with open(os.path.join(log_path, log_name), "a", encoding = "utf-8") as log:
 
 		log.write('\n' + str(text) + '\n')
-
 		log.close()
 
 
@@ -142,7 +141,7 @@ class Settings:
 
 		self.debug = False
 
-		with open(file_path, 'r') as file:
+		with open(file_path, 'r', encoding = "utf-8") as file:
 
 			self.settings_data = yaml.load(file)
 
@@ -174,7 +173,7 @@ class Language:
 
 		self.debug = debug
 
-		with open(file_path, 'r') as file:
+		with open(file_path, 'r', encoding = "utf-8") as file:
 
 			self.language_data = json.load(file)
 
@@ -226,6 +225,13 @@ _map = Map(
 	os.path.join(SETTINGS_PATH, "maps.json")
 	)
 
+_chart = Chart(
+	DEBUG,
+	os.path.join(SETTINGS_PATH, "charts.json"),
+	os.path.join(STATIC_PATH, "result/"),
+	_language
+	)
+
 if _settings.get_settings_value("debug"):
 
 	print("------------------[DEBUG]------------------")
@@ -233,6 +239,7 @@ if _settings.get_settings_value("debug"):
 	print(f"DEBUG | {_language}\t OK")
 	print(f"DEBUG | {_api}\t      OK")
 	print(f"DEBUG | {_map}\t      OK")
+	print(f"DEBUG | {_chart}\t      OK")
 	print("----------------[END DEBUG]----------------\n")
 
 
@@ -244,12 +251,12 @@ if _settings.get_settings_value("debug"):
 # Write file in content /src/static/css/theme.css 
 def create_theme(theme_path, file_path):
 
-	with open(theme_path, "r") as file:
+	with open(theme_path, "r", encoding = "utf-8") as file:
 
 		data = file.read()
 		file.close()
 
-	with open(file_path, 'w') as file:
+	with open(file_path, 'w', encoding = "utf-8") as file:
 
 		file.write(data)
 		file.close()
@@ -375,6 +382,14 @@ def load_map_texts():
 	return texts
 
 
+# Load all texts from the selected language for the chart view
+def load_chart_texts():
+
+	texts = {}
+
+	return texts
+
+
 # =============================================================================
 # Routes
 # =============================================================================
@@ -390,7 +405,7 @@ def login_view():
 
 	error = None
 
-	with open(os.path.join(SETTINGS_PATH, "auth.json"), 'r') as file:
+	with open(os.path.join(SETTINGS_PATH, "auth.json"), 'r', encoding = "utf-8") as file:
 
 		auth_data = json.load(file)
 		file.close()
@@ -569,7 +584,7 @@ def process_data_functions_view(data_set):
 def process_data_map_view(data_set):
 
 
-	with open(os.path.join(SETTINGS_PATH, "maps.json")) as file:
+	with open(os.path.join(SETTINGS_PATH, "maps.json"), "r", encoding = "utf-8") as file:
 
 		map_config = json.load(file)
 		file.close()
@@ -605,16 +620,135 @@ def process_data_map_view(data_set):
 
 	return render_template("maps.html", texts=texts, default_data=default_data)
 
-@APP.route("/process_data/video/<data_set>")
+
+@APP.route("/process_data/video/<data_set>", methods=['GET', 'POST'])
 def process_data_video_view(data_set):
 
 	pass
 
 
-@APP.route("/process_data/chart/<data_set>")
+@APP.route("/process_data/chart/<data_set>", methods=['GET', 'POST'])
 def process_data_chart_view(data_set):
 
-	pass
+	texts = load_chart_texts()
+
+	with open(os.path.join(DATA_PATH, "normal/" + str(data_set)) + "/data.bin", "rb") as file:
+
+		data =  pickle.load(file)
+		file.close()
+
+	with open(os.path.join(SETTINGS_PATH, 'charts.json'), "r") as file:
+
+		data_config = json.load(file)
+		file.close()
+
+	chart_config = {}
+	chart_config["pointsType"] = data_config["pointsType"]
+	chart_config["linesType"] = data_config["linesType"]
+	chart_config["defaultLineWidth"] = data_config["defaultLineWidth"]
+	chart_config["defaultColor"] = data_config["defaultColor"]
+		
+	x_data = {}
+	x_data["data"] = []
+
+	y_data = {}
+	y_data["data"] = []
+
+	for d in data.keys():
+
+		try:
+
+			x_data["data"].append(data_config["data_config"][d])
+			y_data["data"].append(data_config["data_config"][d])
+
+		except KeyError:
+
+			pass
+
+	time = {"name": "time", "unit": "s", "prefix": "time"}
+	x_data["data"].append(time)
+
+	# Loading all users choices and create chart
+
+	if request.method == 'POST':
+
+		chart_title = request.form["chartTitle"]
+		line_width = request.form.get("lineWidth")
+
+		print(chart_title)
+		print(line_width)
+
+		# Getting the abscisses value
+
+		Xdata = []
+		
+		if request.form.get("xData") == "time":
+
+			Xdata.append({"name": "time", "values": [], "prefix": "time", "unit": "0.3s"})
+		
+		else:
+
+			dic = {}
+			dic["name"] = request.form.get("xData")
+			dic["prefix"] = data_config["data_config"][data_config["nameToPrefix"][dic["name"]]]["prefix"]
+			prefix = data_config["data_config"][data_config["nameToPrefix"][dic["name"]]]["prefix"]
+			dic["values"] = data[prefix]
+			dic["unit"] = data_config["data_config"][dic["prefix"]]["unit"]
+			Xdata.append(dic)
+ 
+		# Getting the ordonates value
+		yValues = []
+
+		for d in data.keys():
+
+			try:
+
+				if request.form.get(data_config["data_config"][d]["name"]) != None and data_config["data_config"][d] not in Xdata:
+
+					yValues.append(d)
+
+			except KeyError:
+
+				pass
+
+		Ydata = []
+
+		for value in yValues:
+
+			dic = {}
+			dic["name"] = data_config["data_config"][value]["name"]
+			dic["prefix"] = value
+			dic["values"] = data[value]
+			dic["color"] = request.form.get(data_config["data_config"][value]["name"] + "Color")
+			dic["point"] = request.form.get(data_config["data_config"][value]["name"] + "PointStyle")
+			dic["line"] = request.form.get(data_config["data_config"][value]["name"] + "LineStyle")
+			dic["legend"] = request.form.get(data_config["data_config"][value]["name"] + "Legend")
+			dic["unit"] = data_config["data_config"][value]["unit"]
+			
+			Ydata.append(dic)
+
+		if request.form["chartYLabel"] == "" or request.form["chartYLabel"] == None:
+
+			x_label = ""
+
+		else:
+
+			x_label = request.form["chartXLabel"]
+
+		if request.form["chartYLabel"] == "" or request.form["chartYLabel"] == None:
+
+			y_label = ""
+
+		else:
+
+			y_label = request.form["chartYLabel"]
+
+		_chart.draw_chart(Xdata, Ydata, chart_title, x_label, y_label, line_width)
+
+		return render_template("chart.html")
+
+	return render_template("charts.html", texts=texts, y_data=y_data, x_data=x_data, chart_config=chart_config)
+
 
 
 # =============================================================================

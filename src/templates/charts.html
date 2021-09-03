@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ texts.mapPageTitle }}</title>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css')}}">
+
+		<script src="{{ url_for('static', filename='js/charts.js') }}" defer></script>
+
+	</head>
+
+	<body>
+		
+		<header id="header">
+			<h1>LC SAT</h1>
+		</header>
+
+		<article class="mainContainer">
+
+			<form action="" method="post">
+				
+				<label for="chartTitle">Chart title:</label>
+				<input type="text" placeholder="Chart title" name="chartTitle" id="chartTitle">
+
+				<label for="chartXLabel">Chart x label:</label>
+				<input type="text" placeholder="Chart x label" name="chartXLabel" id="chartXLabel">
+
+				<label for="chartYLabel">Chart y label:</label>
+				<input type="text" placeholder="Chart y label" name="chartYLabel" id="chartYLabel">
+
+				<label for="xData">
+				<select id="xData" name="xData">
+
+					{% for data in x_data.data %}
+
+						<option value="{{ data.name }}">{{ data.name }}</option>
+
+					{% endfor %}
+					
+				</select>
+
+				<ul>
+					
+					{% for data in y_data.data %}
+
+						<li>
+							<p>{{ data.name }}:</p>
+
+							<div>
+
+								<label for="{{ data.name }}">Select this data :</label>
+
+								<input id="{{ data.name }}" name="{{ data.name }}" class="data" type="checkbox">
+
+							</div>
+
+							<input id="{{ data.name }}Legend" name="{{ data.name }}Legend" type="text" placeholder="Legend" value="{{ data.name }}">
+
+							<select id="{{ data.name }}PointStyle" name="{{ data.name }}PointStyle">
+
+								{% for p in chart_config.pointsType %}
+
+									<option value="{{ p }}">{{ p }}</option>
+
+								{% endfor %}
+
+							</select>
+
+							<select id="{{ data.name }}LineStyle" name="{{ data.name }}LineStyle">
+
+								{% for l in chart_config.linesType %}
+
+									<option value="{{ l }}">{{ l }}</option>
+
+								{% endfor %}
+
+							</select>
+
+							<input type="color" id="{{ data.name }}Color" name="{{ data.name }}Color" value="{{ chart_config.defaultColor }}">
+
+						</li>
+
+					{% endfor %}
+
+				</ul>
+
+				<label for="lineWidth">Line width :</label>
+				<input type="number" id="lineWidth" name="lineWidth" min="1" max="5" value="{{ chart_config.defaultLineWidth }}">
+
+				<input type="submit" value="submit">
+
+			</form>
+
+		</article>
+	</body>
+</html>
