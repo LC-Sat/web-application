@@ -28,11 +28,24 @@ class Chart:
 			self.config = json.load(file)
 			file.close()
 
+		return
+
 
 	def __str__(self):
 
 		return "Chart class"
 
+
+	def reload(self, debug, config_path):
+
+		self.debug = debug
+
+		with open(config_path, "r", encoding = "utf-8") as file:
+
+			self.config = json.load(file)
+			file.close()
+
+		return
 
 
 	def draw_chart(self, x_data, y_data, title, x_label, y_label, line_width):
@@ -110,20 +123,12 @@ class Chart:
 
 			Y = np.array(data["values"], dtype="float64")
 
-
-
-			if data["color"] == "#000000":
-
-				axs[r].plot(X, Y, marker = data["point"], linestyle = data["line"], linewidth = line_width)
-
-			else:
-				
-				axs[r].plot(X, Y, str(data["color"]), marker = data["point"], linestyle = data["line"], linewidth = line_width)
+			axs[r].plot(X, Y, str(data["color"]), marker = data["point"], linestyle = data["line"], linewidth = line_width)
 
 			
 			axs[r].set(xlabel=chart_xlabel, ylabel=self.language.get_text(data["prefix"]) + " (" + self.language.get_text("in") + " " + str(data["unit"]) + ')')
 
-
+			# place on both sides values
 			if r % 2 != 0:
 
 				axs[r].tick_params(axis='y', which='both', labelleft=False, labelright=True)

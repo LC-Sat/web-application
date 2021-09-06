@@ -20,15 +20,30 @@ class Map:
 
 		self.debug = debug
 
-		with open(tiles_file, 'r') as file:
+		with open(tiles_file, 'r', encoding = "utf-8") as file:
 
 			self.tiles = json.load(file)
 			file.close()
+
+		return
 
 
 	def __str__(self):
 
 		return "Map class"
+
+
+	def reload(self, debug, tiles_file):
+
+		self.debug = debug
+
+		with open(tiles_file, 'r', encoding = "utf-8") as file:
+
+			self.tiles = json.load(file)
+			file.close()
+
+		return
+
 
 
 	def create_map(self, latitude, longitude, title, icon, color, zoom_start, map_destination):
@@ -61,8 +76,6 @@ class Map:
 
 			except Exception as e:
 
-				print(e)
-
 				break
 
 		# Add map tiles
@@ -72,16 +85,16 @@ class Map:
 			for tile in self.tiles["tiles"]:
 
 				folium.TileLayer(str(tile)).add_to(m)
-				print(tile)
 
 		except Exception as e:
 
-			print(e)
 			pass
 
 		folium.LayerControl().add_to(m)
 
 		# Save map and store it to static/result folder
 		m.save(os.path.join(map_destination, "map.html"))
+
+		return
 
 		

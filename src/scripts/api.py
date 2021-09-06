@@ -31,15 +31,30 @@ class Api:
 
 		# Load urls from urls.json file
 
-		with open(urls_path + "/urls.json", 'r') as file:
+		with open(urls_path + "/urls.json", 'r', encoding = "utf-8") as file:
 
 			self.urls = json.load(file)
 			file.close()
+
+		return
 
 
 	def __str__(self):
 
 		return "Api class"
+
+
+	def reload(self, debug, url_base, urls_path):
+
+		self.debug = debug
+		self.url_base = url_base
+
+		with open(urls_path + "/urls.json", 'r', encoding = "utf-8") as file:
+
+			self.urls = json.load(file)
+			file.close()
+
+		return
 
 
 	def send_request(self, url):
@@ -342,6 +357,8 @@ class Api:
 			l.write(r.content)
 			l.close()
 
+		return
+
 
 	def get_sub_folders(self, path):
 
@@ -456,6 +473,8 @@ class Api:
 			for file in os.listdir(os.path.join(self.data_path, "data")):
 
 				shutil.move(file, self.data_path + "/normal/" + dirname)
+
+			os.rmdir(os.path.join(self.data_path, "data"))
 
 		return True
 		

@@ -9,7 +9,7 @@ form {
 	margin-bottom: 30px;
 }
 
-form select, form input {
+form select, form input, button {
 	padding: 10px;
 	width: 200px;
 	margin: 10px;
@@ -26,7 +26,7 @@ form label {
 	margin-top: 25px;
 }
 
-form input[type="submit"] {
+form input[type="submit"], button {
 	margin-top: 50px;
 	margin-bottom: 50px;
 	border-color: var(--headersBackgroundColor);

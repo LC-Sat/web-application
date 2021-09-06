@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ texts.settingsPageTitle }}</title>
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css')}}">
+
+	</head>
+
+	<body>
+		
+		<header id="header">
+			<h1>LC SAT</h1>
+		</header>
+
+		<article class="mainContainer">
+			
+			<form action="" method="post" id="settingsForm">
+
+				<fieldset>
+
+					<legend>{{ texts.generalSettings }}</legend>
+					
+					<label for="debug">{{ texts.settingsDebugMode }}:</label>
+
+					{% if general_settings.debugMode == True %}
+
+						<input type="checkbox" name="debug" id="debug" checked>
+
+					{% else %}
+
+						<input type="checkbox" name="debug" id="debug">	
+
+					{% endif %}
+
+					<label for="languages">{{ texts.languages }}:</label>
+
+					<select name="languages" id="languages">
+						
+						{% for language in general_settings.languages %}
+
+							<option value="{{ language }}">{{ language }}</option>
+
+						{% endfor %}
+
+					</select>
+
+					<label for="theme">{{ texts.themes }}:</label>
+
+					<select name="theme" id="theme">
+
+						{% for theme in general_settings.themes %}
+						
+							<option value="{{ theme }}">{{ theme }}</option>
+
+						{% endfor %}
+
+					</select>
+
+				</fieldset>
+
+			
+
+				<fieldset>
+					
+					<legend>{{ texts.cansatSettings }}</legend>
+
+					<label for="urlBase">{{ texts.urlBase }}:</label>
+					<input type="text" name="urlBase" id="urlBase" placeholder="urlBase" value="{{ cansat_settings.urlBase }}" required>
+
+					<table>
+						
+						<thead>
+							<tr>
+								<th colspan="2">{{ texts.apiUrls }}:</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							
+							{% for url in cansat_settings.urlsPatterns %}
+
+								<tr>
+									
+									<td>{{ url[0] }}</td>
+									<td>
+										<input type="text" name="{{ url[0] }}UrlInput" id="{{ url[0] }}UrlInput" value="{{ url[1] }}" placeholder="Enter url pattern" required>
+									</td>
+
+								</tr>
+
+							{% endfor %}
+
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<p>{{ texts.apiDoc }}
+										<a href="https://lc-sat.github.io/doc/api_doc.html"> {{ texts.here }}</a>.
+									</p>
+								</td>
+							</tr>
+						</tfoot>
+
+					</table>
+
+				</fieldset>
+
+				<fieldset>
+
+					<legend>{{ texts.chartSettings }}</legend>
+
+					<label for="recordingFrequency">{{ texts.recordingFrequency }}:</label>
+					<input type="number" id="recordingFrequency" name="recordingFrequency" value="{{ chart_settings.recordingFrequency }}" step="0.01" min="0">
+
+
+					<label for="pointStyle">{{ texts.selectPointStyle }}:</label>
+
+					<select name="pointStyle" id="pointStyle">
+
+						{% for pointStyle in chart_settings.defaultPointStyles %}
+						
+							<option value="{{ pointStyle }}">{{ pointStyle }}</option>
+
+						{% endfor %}
+
+					</select>
+
+					<label for="lineStyle">{{ texts.selectLineStyle }}:</label>
+
+					<select name="lineStyle" id="lineStyle">
+						
+						{% for lineStyle in chart_settings.defaultLineStyles %}
+						
+							<option value="{{ lineStyle }}">{{ lineStyle }}</option>
+
+						{% endfor %}
+
+					</select>
+
+					<table>
+						
+						<thead>
+							
+							<tr>
+								<th colspan="4">{{ texts.dataConfig }}:</th>
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							{% for data in chart_settings.dataConfig %}
+							
+								<tr>
+									<td>{{ data.name }}</td>
+									<td><input type="text" id="{{ data.name }}Unit" name="{{ data.name }}Unit" value="{{ data.unit }}" placeholder="Enter unit"></td>
+									<td>{{ data.prefix }}</td>
+								</tr>
+
+							{% endfor %}
+
+						</tbody>
+
+					</table>
+
+					<label for="defaultLineColor">{{ texts.lineColor }}:</label>
+					<input type="color" id="defaultLineColor" name="defaultLineColor" value="{{ chart_settings.defaultLineColor }}">
+
+				</fieldset>
+
+				<fieldset>
+
+					<legend>{{ texts.mapSettings }}</legend>
+
+					<label for="mapTitle">{{ texts.mapTitle }}:</label>
+					<input type="text" id="mapTitle" name="mapTitle" placeholder="Enter map title" value="{{ map_settings.mapTitle }}" required>
+
+					<label for="defaultZoom">{{ texts.mapZoom }}:</label>
+					<input type="" name="defaultZoom" id="defaultZoom" value="{{ map_settings.defaultZoom }}" min="0" max="18">
+
+					<label for="defaultMarker">{{ texts.mapMarker }}:</label>
+
+					<select name="defaultMarker" id="defaultMarker">
+
+						{% for marker in map_settings.defaultMarker %}
+							
+							<option value="{{ marker }}">{{ marker }}</option>
+
+						{% endfor %}
+
+					</select>
+
+
+					<label for="defaultMarkerColor">{{ texts.mapMarkerColor }}:</label>
+
+					<select name="defaultMarkerColor" id="defaultMarkerColor">
+
+						{% for markerColor in map_settings.defaultMarkerColor  %}
+						
+							<option value="{{ markerColor }}">{{ markerColor }}</option>
+
+						{% endfor %}
+
+					</select>
+
+				</fieldset>
+
+				<fieldset>
+
+					<legend>{{ texts.videoSettings }}</legend>
+
+					<label for="videoSize">{{ texts.videoSettingsSize }}: </label>
+					<input id="videoSize" name="videoSize" type="number" min="8" value="{{ video_settings.videoSize }}">
+
+					<label for="minimalTemperature">{{ texts.videoSettingsMinimalTemperature }}: </label>
+					<input id="minimalTemperature" name="minimalTemperature" type="number" value="{{ video_settings.minimalTemperature }}">
+
+					<label for="maximalTemperature">{{ texts.videoSettingsMaximalTemperature }}: </label>
+					<input id="maximalTemperature" name="maximalTemperature" type="number" value="{{ video_settings.maximalTemperature }}">
+
+					<label for="FPS">{{ texts.videoSettingsFPS }}: </label>
+					<input id="FPS" name="FPS" type="number" value="{{ video_settings.FPS }}" min="0">
+
+				</fieldset>
+
+				<a id="submitForm">Submit</a>
+
+			</form>
+
+		</article>
+
+		<div class="modal" id="modal">
+			<button onclick="document.getElementById('modal').classList.remove('visible');">X</button>
+			<p>{{ texts.settingsTemperatureError }}</p>
+		</div>
+
+		<script>
+			
+			// The video size must be a multiple of 8
+			const videoSizeInput = document.getElementById("videoSize");
+			videoSizeInput.addEventListener("change", () => {
+
+				if (videoSizeInput.value % 8 < 4) {
+					videoSizeInput.value = videoSizeInput.value - (videoSizeInput.value % 8);
+				} else if (videoSizeInput.value % 8 > 4) {
+					videoSizeInput.value = videoSizeInput.value - ( -(8 - (videoSizeInput.value % 8)));
+				}
+
+			});
+
+			const form = document.getElementById("settingsForm");
+			const submitBtn = document.getElementById("submitForm");
+
+			const minimalTemperatureInput = document.getElementById("minimalTemperature");
+			const maximalTemperatureInput = document.getElementById("maximalTemperature");
+
+			submitBtn.addEventListener("click", () => {
+
+				if (maximalTemperatureInput.value - minimalTemperatureInput.value > 0) {
+
+					form.submit();
+
+				} else {
+
+					document.getElementById("modal").classList.add("visible");
+				}
+
+			});
+
+		</script>
+
+	</body>
+
+</html>

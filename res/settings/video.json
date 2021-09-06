@@ -1,0 +1,9 @@
+{
+	"videoSize": 640,
+	"FPS": 30,
+	"minimalTemperature": -40,
+	"maximalTemperature": 85,
+	"minimalColor": [0, 0, 255],
+	"mediumColor": [0, 255, 0],
+	"maximalColor": [255, 0, 0]
+}

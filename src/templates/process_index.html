@@ -28,7 +28,7 @@
 			</div>
 
 			<div>
-				<a href="{{ url_for('process_data_video_view', data_set='{{ data.set }}') }}">
+				<a href="/process_data/video/{{ data.set }}">
 					<img src="{{ url_for('static', filename='img/video.png')}}" alt="{{ texts.videos }}">
 					<h1>{{ texts.videos }}</h1>
 				</a>
