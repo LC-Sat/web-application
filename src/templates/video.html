@@ -31,6 +31,22 @@
 
 			<video controls>
 				
+				<source src="{{ url_for('static', filename='result/motion-detection.mp4') }}">
+
+				{{ texts.videoRenderError }}
+
+			</video>
+
+			<video controls>
+				
+				<source src="{{ url_for('static', filename='result/motion-filtering.mp4') }}">
+
+				{{ texts.videoRenderError }}
+
+			</video>
+
+			<video controls>
+				
 				<source src="{{ url_for('static', filename='result/thermal.avi') }}">
 
 				{{ texts.videoRenderError }}
