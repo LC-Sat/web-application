@@ -1,0 +1,11 @@
+:root {
+	/* Colors */
+	--backgroundColor: #F4F4F2;
+	--componentsBackgroundColor: #E8E8E8;
+	--headersBackgroundColor: #BBBFCA;
+	--validColor: #27a102;
+	--runningColor: #fedb7a;
+	--errorColor: #8c4043;
+	--textColor: #495464;
+	--font: 'Consolas';
+}
