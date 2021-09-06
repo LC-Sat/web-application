@@ -12,9 +12,11 @@ Project developped with Python 3.9.2 on [Sublime Text](https://www.sublimetext.c
 
 ### Project overview
 
+This is an alternative application. You can find the original one [here](https://github.com/LC-Sat/web-application). 
+
 This application was created for the CanSat competition (2020 - 2021), especially for the international phase of the competition. This application process the data recorded by the CanSat during the acsent, the drop and the descent. 
 
-This web-application is an update of the computer software that was created during the national phase of the competition. The purpose is to allow any kind of connected device (which can have access to internet) to process these data. 
+However, because of Covid-19 situtation the competition is online. The first developped web-application can't be use. We decided to "transform" it into a website. 
 
 ## Download
 
@@ -47,61 +49,9 @@ The project uses the following librairies:
 
 Notice that the program can automatically download the missing librairies **if** the pip command is available on your computer.
 
-### Run the program
-
-To run the program, you simply have to run the main.py file. When you first run the program, you have to wait a couple of seconds until an URL appears on your terminal. Copy and past the URL in your web browser (I recommand to you firefox or google chrome).
-
-### Errors
-
-- Your program might stop immediatly after you run it without any error on the terminal. It's an importation error which you can find here:
-
-> web-application/logs/webapp/date.txt
-
-  -  The video are not render. When you ask for videos, you have to wait a long time until you can access the video template. If any video are rendered, try to reload the page or consider switching to another web browser. If the thermal video doesn't render, the problem must come from the raw data.
+### Error
 
 - The custom chart is not render. Reload the page, the web browser must have render the previous chart.  
-
-## Description
-
-The programm runs in two mode: An "online" mode and an "local" mode. 
-Both mode starts with the login page:
-![Login page](https://cdn.discordapp.com/attachments/845199430688833567/884422621628874812/unknown.png)Note that there are no real login security on this application, you can bypass the authentification with url for instance. This template acts as an idea rather than being a real function. You can find and change the username and the password in the next file:
-> web-application/res/settings/auth.json 
-
-Both mode also render the next template:
-![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884425642861555742/unknown.png)
-### Online mode
-
-If you want to communicate with the CanSat you have to click on the "connect to Cansat" checkbox / button. A loading screen is render and it stays until the CanSat is connected to the application. Once the CanSat is connected, the encrypt data switch and the start recording button are unlocked. Once you start the record, a modal appears on you screen with a button to stop the record. 
-
-### Off line mode
-
-On the same template, you can process previous data by clicking the "see previous data" button bellow the command panel.  
-
-
-Both modes leads to the next template:
-![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884454034889641984/unknown.png)
-The different data sets are stored in indexed files. To load the last recorded data, you have to select the highest number of the list. One you have submit your choice, the application render the next template:
-![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884455016688132176/unknown.png)
-- Maps
-
-The map link first renders a form in which you can apply custom styles on the map. Once you have submited the form  the map appears on your screen.
-
-![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884456859275235348/unknown.png)
-- Charts
-
-As the map link does, the charts link first leads to a form. On this form you have to select which data you want to use in your chart. If you want to plot multiple data, multiple charts are created. You can select custom titles and lables but the application can create automatically those texts.
-![enter image description here](https://media.discordapp.net/attachments/845199430688833567/884457674983489606/unknown.png?width=1374&height=670)   ![enter image description here](https://media.discordapp.net/attachments/845199430688833567/884457822522327061/unknown.png?width=1379&height=670)
-- Videos
-
-The video links might take some time (several minutes) to render the template. Two videos are displayed on the screen once the template is rendered.
-
-To access the settings template, you have to enter the following url :
-> localhost:5000/settings/
-
-A form is displayed on the screen. This functionnallity might occured some problems with the reloading system. In case of any bug, you might re-download all the settings files. 
-
-![enter image description here](https://media.discordapp.net/attachments/845199430688833567/884458851611574292/unknown.png?width=1376&height=670)
 
 ## Configuration
 
@@ -302,7 +252,24 @@ This file contains the default configuration settings for the maps:
 	"maximalColor": [255, 0, 0]
 }
 ``` 
- 
+
+## Description
+
+This is the first template of the "online" web-application:
+![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884455016688132176/unknown.png)
+- Maps
+
+The map link first renders a form in which you can apply custom styles on the map. Once you have submited the form  the map appears on your screen.
+
+![enter image description here](https://cdn.discordapp.com/attachments/845199430688833567/884456859275235348/unknown.png)
+- Charts
+
+As the map link does, the charts link first leads to a form. On this form you have to select which data you want to use in your chart. If you want to plot multiple data, multiple charts are created. You can select custom titles and lables but the application can create automatically those texts.
+![enter image description here](https://media.discordapp.net/attachments/845199430688833567/884457674983489606/unknown.png?width=1374&height=670)   ![enter image description here](https://media.discordapp.net/attachments/845199430688833567/884457822522327061/unknown.png?width=1379&height=670)
+- Videos
+
+The video links might take some time (several minutes) to render the template. Two videos are displayed on the screen once the template is rendered.
+
 ## Notes
 
 Note that:
@@ -314,5 +281,7 @@ Note that:
 
 The templates are coded for any kind of device (from smartphones to computers).  
 
+
+---
 
 > Written with [StackEdit](https://stackedit.io/).
